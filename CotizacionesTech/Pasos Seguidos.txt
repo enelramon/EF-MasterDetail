@@ -1,0 +1,6 @@
+﻿1- Crear el proyecto en github
+2- Crear proyecto windows form aplication
+3- Clonar el repo de github
+4- Instalar SQLite>>>> Install-Package System.Data.SQLite
+5- Instalar EF >>>>>>> Install-Package EntityFramework
+6- Crear el conexion string
