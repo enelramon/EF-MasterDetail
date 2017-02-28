@@ -11,6 +11,9 @@ namespace Entidades
         [Key]
         public int ProductoId { get; set; }
         public string Descripcion { get; set; }
+        public string Medida { get; set; }
+        public bool Itbis { get; set; }
+        public decimal Costo { get; set; }
         public decimal Precio { get; set; } 
 
         public virtual ICollection<CotizacionesDetalle> CotizacionesDetalle { get; set; }

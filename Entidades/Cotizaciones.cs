@@ -13,6 +13,7 @@ namespace Entidades
         public DateTime Fecha { get; set; }
         public int ClienteId { get; set; }
         public decimal Monto { get; set; }
+
         public virtual Clientes Cliente { get; set; }
         public virtual ICollection<CotizacionesDetalle> Detalle { get; set; }
 
