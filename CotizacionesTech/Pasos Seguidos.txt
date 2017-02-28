@@ -1,6 +1,15 @@
-﻿1- Crear el proyecto en github
-2- Crear proyecto windows form aplication
-3- Clonar el repo de github
-4- Instalar SQLite>>>> Install-Package System.Data.SQLite
-5- Instalar EF >>>>>>> Install-Package EntityFramework
-6- Crear el conexion string
+﻿01- Crear el proyecto en github
+02- Crear proyecto windows form aplication
+03- Clonar el repo de github
+04- Instalar SQLite>>>> Install-Package System.Data.SQLite
+05- Instalar EF >>>>>>> Install-Package EntityFramework
+06- Crear el conexion string
+
+07- Crear la DAL						: Es un proyecto tipo Class Library
+08- Crear la capa de entidades			: Es un proyecto tipo Class Library
+09- Crear la BLL						: Es un proyecto tipo Class Library
+10- Instalar EF en DAL y BLL
+10- Referenciar las Capas
+		DAL: Entidades
+		BLL: DAL y Entidades
+		UI (CotizacionesTech): BLL y Entidades.
