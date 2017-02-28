@@ -70,16 +70,76 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Consultas\cClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Consultas\cClientes.Designer.cs">
+      <DependentUpon>cClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cCotizaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\cCotizaciones.Designer.cs">
+      <DependentUpon>cCotizaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\cProductos.Designer.cs">
+      <DependentUpon>cProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cTiposProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\cTiposProductos.Designer.cs">
+      <DependentUpon>cTiposProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\cUsuarios.Designer.cs">
+      <DependentUpon>cUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Registros\rClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rClientes.Designer.cs">
+      <DependentUpon>rClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rCotizaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rCotizaciones.Designer.cs">
+      <DependentUpon>rCotizaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rProductos.Designer.cs">
+      <DependentUpon>rProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rTiposProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rTiposProductos.Designer.cs">
+      <DependentUpon>rTiposProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rUsuarios.Designer.cs">
+      <DependentUpon>rUsuarios.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -110,6 +170,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>CotizacionesDb.mdf</DependentUpon>
     </Content>
+    <Content Include="Database\DbScript.Sql" />
     <Content Include="Pasos Seguidos.txt" />
   </ItemGroup>
   <ItemGroup>
