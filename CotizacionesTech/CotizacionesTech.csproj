@@ -138,6 +138,9 @@
     <Compile Include="Registros\rUsuarios.Designer.cs">
       <DependentUpon>rUsuarios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Consultas\cClientes.resx">
+      <DependentUpon>cClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +197,10 @@
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{3b00fd0b-1785-44b5-bc6f-cd8858e5b609}</Project>
       <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{5EA66E6E-220B-4EA6-89C5-018EC55ACC5C}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{6c18fc1b-610b-4724-8725-6434aca4ba67}</Project>

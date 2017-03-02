@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
+using DAL;
 
 namespace CotizacionesTech.Consultas
 {
@@ -14,6 +9,20 @@ namespace CotizacionesTech.Consultas
         public cClientes()
         {
             InitializeComponent();
+        }
+
+        private void Filtrarbutton_Click(object sender, EventArgs e)
+        {
+
+            using (var consulta = new Repositorio<Entidades.Clientes>())
+            {
+                ClientesdataGridView.DataSource = consulta.Lista(p=> p.ClienteId == Convert.ToInt32(BuscartextBox.Text));
+            }
+        }
+
+        private void BuscartextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
