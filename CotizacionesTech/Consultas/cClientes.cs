@@ -18,6 +18,7 @@ namespace CotizacionesTech.Consultas
             {
                 ClientesdataGridView.DataSource = consulta.Lista(p=> p.ClienteId == Convert.ToInt32(BuscartextBox.Text));
             }
+
         }
 
         private void BuscartextBox_TextChanged(object sender, EventArgs e)
