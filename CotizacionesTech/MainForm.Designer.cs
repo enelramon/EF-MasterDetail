@@ -58,6 +58,7 @@
             this.NewButton.Text = "Nuevo";
             this.NewButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.NewButton.UseVisualStyleBackColor = true;
+            this.NewButton.Click += new System.EventHandler(this.NewButton_Click);
             // 
             // SaveButton
             // 
