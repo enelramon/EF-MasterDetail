@@ -58,7 +58,7 @@
             // 
             peliculaIdLabel.AutoSize = true;
             peliculaIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            peliculaIdLabel.Location = new System.Drawing.Point(90, 9);
+            peliculaIdLabel.Location = new System.Drawing.Point(112, 9);
             peliculaIdLabel.Name = "peliculaIdLabel";
             peliculaIdLabel.Size = new System.Drawing.Size(80, 17);
             peliculaIdLabel.TabIndex = 34;
@@ -170,7 +170,7 @@
             this.radioButtonNoactivo.AutoSize = true;
             this.radioButtonNoactivo.Location = new System.Drawing.Point(182, 31);
             this.radioButtonNoactivo.Name = "radioButtonNoactivo";
-            this.radioButtonNoactivo.Size = new System.Drawing.Size(67, 17);
+            this.radioButtonNoactivo.Size = new System.Drawing.Size(80, 21);
             this.radioButtonNoactivo.TabIndex = 42;
             this.radioButtonNoactivo.Text = "noActivo";
             this.radioButtonNoactivo.UseVisualStyleBackColor = true;
@@ -181,7 +181,7 @@
             this.radioButtonActivo.AutoSize = true;
             this.radioButtonActivo.Location = new System.Drawing.Point(6, 31);
             this.radioButtonActivo.Name = "radioButtonActivo";
-            this.radioButtonActivo.Size = new System.Drawing.Size(66, 17);
+            this.radioButtonActivo.Size = new System.Drawing.Size(79, 21);
             this.radioButtonActivo.TabIndex = 41;
             this.radioButtonActivo.Text = "esActivo";
             this.radioButtonActivo.UseVisualStyleBackColor = true;
@@ -191,6 +191,7 @@
             // 
             this.groupBox1.Controls.Add(this.radioButtonNoactivo);
             this.groupBox1.Controls.Add(this.radioButtonActivo);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.groupBox1.Location = new System.Drawing.Point(20, 92);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(294, 82);
@@ -222,7 +223,7 @@
             this.Controls.Add(nombreLabel);
             this.Controls.Add(this.nombreTipoTextBox);
             this.Name = "rTiposProductos";
-            this.Text = "rTiposProductos";
+            this.Text = "TIPOS DE PRODUCTOS";
             this.Load += new System.EventHandler(this.rTiposProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderNombre)).EndInit();
             this.groupBox1.ResumeLayout(false);

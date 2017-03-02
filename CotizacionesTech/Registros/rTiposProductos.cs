@@ -42,7 +42,6 @@ namespace CotizacionesTech.Registros
 
         }
 
-   
         private void rTiposProductos_Load(object sender, EventArgs e)
         {
             radioButtonActivo.Checked = true;
