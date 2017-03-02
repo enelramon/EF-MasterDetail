@@ -31,24 +31,23 @@
             this.ClientesdataGridView = new System.Windows.Forms.DataGridView();
             this.Filtrarbutton = new System.Windows.Forms.Button();
             this.BuscartextBox = new System.Windows.Forms.TextBox();
-            this.Idlabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ClientesdataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // ClientesdataGridView
             // 
-            this.ClientesdataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.ClientesdataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ClientesdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ClientesdataGridView.Location = new System.Drawing.Point(12, 106);
+            this.ClientesdataGridView.Location = new System.Drawing.Point(12, 94);
             this.ClientesdataGridView.Name = "ClientesdataGridView";
-            this.ClientesdataGridView.Size = new System.Drawing.Size(951, 210);
+            this.ClientesdataGridView.Size = new System.Drawing.Size(501, 220);
             this.ClientesdataGridView.TabIndex = 0;
             // 
             // Filtrarbutton
             // 
-            this.Filtrarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Filtrarbutton.Location = new System.Drawing.Point(888, 67);
+            this.Filtrarbutton.Location = new System.Drawing.Point(438, 65);
             this.Filtrarbutton.Name = "Filtrarbutton";
             this.Filtrarbutton.Size = new System.Drawing.Size(75, 23);
             this.Filtrarbutton.TabIndex = 1;
@@ -58,29 +57,17 @@
             // 
             // BuscartextBox
             // 
-            this.BuscartextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BuscartextBox.Location = new System.Drawing.Point(743, 67);
+            this.BuscartextBox.Location = new System.Drawing.Point(293, 65);
             this.BuscartextBox.Name = "BuscartextBox";
             this.BuscartextBox.Size = new System.Drawing.Size(139, 20);
             this.BuscartextBox.TabIndex = 2;
             this.BuscartextBox.TextChanged += new System.EventHandler(this.BuscartextBox_TextChanged);
             // 
-            // Idlabel
-            // 
-            this.Idlabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Idlabel.AutoSize = true;
-            this.Idlabel.Location = new System.Drawing.Point(719, 70);
-            this.Idlabel.Name = "Idlabel";
-            this.Idlabel.Size = new System.Drawing.Size(18, 13);
-            this.Idlabel.TabIndex = 3;
-            this.Idlabel.Text = "ID";
-            // 
             // cClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(975, 360);
-            this.Controls.Add(this.Idlabel);
+            this.ClientSize = new System.Drawing.Size(525, 358);
             this.Controls.Add(this.BuscartextBox);
             this.Controls.Add(this.Filtrarbutton);
             this.Controls.Add(this.ClientesdataGridView);
@@ -97,6 +84,5 @@
         private System.Windows.Forms.DataGridView ClientesdataGridView;
         private System.Windows.Forms.Button Filtrarbutton;
         private System.Windows.Forms.TextBox BuscartextBox;
-        private System.Windows.Forms.Label Idlabel;
     }
 }
