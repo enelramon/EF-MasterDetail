@@ -40,15 +40,15 @@
             this.ClientesdataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ClientesdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ClientesdataGridView.Location = new System.Drawing.Point(12, 94);
+            this.ClientesdataGridView.Location = new System.Drawing.Point(12, 78);
             this.ClientesdataGridView.Name = "ClientesdataGridView";
-            this.ClientesdataGridView.Size = new System.Drawing.Size(578, 220);
+            this.ClientesdataGridView.Size = new System.Drawing.Size(965, 220);
             this.ClientesdataGridView.TabIndex = 0;
             // 
             // Filtrarbutton
             // 
-            this.Filtrarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Filtrarbutton.Location = new System.Drawing.Point(518, 65);
+            this.Filtrarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Filtrarbutton.Location = new System.Drawing.Point(905, 49);
             this.Filtrarbutton.Name = "Filtrarbutton";
             this.Filtrarbutton.Size = new System.Drawing.Size(75, 23);
             this.Filtrarbutton.TabIndex = 1;
@@ -59,7 +59,7 @@
             // BuscartextBox
             // 
             this.BuscartextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BuscartextBox.Location = new System.Drawing.Point(373, 65);
+            this.BuscartextBox.Location = new System.Drawing.Point(760, 49);
             this.BuscartextBox.Name = "BuscartextBox";
             this.BuscartextBox.Size = new System.Drawing.Size(139, 20);
             this.BuscartextBox.TabIndex = 2;
@@ -67,8 +67,9 @@
             // 
             // Idlabel
             // 
+            this.Idlabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Idlabel.AutoSize = true;
-            this.Idlabel.Location = new System.Drawing.Point(349, 70);
+            this.Idlabel.Location = new System.Drawing.Point(737, 54);
             this.Idlabel.Name = "Idlabel";
             this.Idlabel.Size = new System.Drawing.Size(18, 13);
             this.Idlabel.TabIndex = 3;
@@ -78,7 +79,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(602, 358);
+            this.ClientSize = new System.Drawing.Size(989, 342);
             this.Controls.Add(this.Idlabel);
             this.Controls.Add(this.BuscartextBox);
             this.Controls.Add(this.Filtrarbutton);
