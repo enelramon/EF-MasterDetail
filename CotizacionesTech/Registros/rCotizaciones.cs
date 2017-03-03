@@ -23,6 +23,7 @@ namespace CotizacionesTech.Registros
             FechadateTimePicker.Value = DateTime.Today;
             ClienteIdcomboBox.Text = " ";
             MontotextBox.Clear();
+            MontoerrorProvider.Clear();
         }
 
         private bool Validar()
@@ -70,6 +71,56 @@ namespace CotizacionesTech.Registros
                     {
                         Context.Guardar(cotizacion);
                         MessageBox.Show("La cotizacion se guardo con exito.");
+                    }
+                }
+
+                Limpiar();
+            }
+        }
+
+        private void Buscarbutton_Click(object sender, EventArgs e)
+        {
+            var cotizacion = new Entidades.Cotizaciones();
+            int id = Utilidades.TOINT(CotizacionIdtextBox.Text);
+
+            using(var Context = new DAL.Repositorio<Entidades.Cotizaciones>())
+            {
+                cotizacion = Context.Buscar(p => p.CotizacionId == id);
+            }
+
+            if(cotizacion != null)
+            {
+                FechadateTimePicker.Value = cotizacion.Fecha;
+                MontotextBox.Text = cotizacion.Monto.ToString();
+                //ClienteIdcomboBox.Text = cotizacion.ClienteId;
+            }
+            else
+            {
+                MessageBox.Show("No existe cliente con ese Id.");
+                Limpiar();
+            }
+        }
+
+        private void Eliminarbutton_Click(object sender, EventArgs e)
+        {
+            if (!Validar())
+            {
+                MessageBox.Show("Los campos estan vacios.");
+            }
+            else
+            {
+                int id = Utilidades.TOINT(CotizacionIdtextBox.Text);
+
+                using (var Context = new DAL.Repositorio<Entidades.Cotizaciones>())
+                {
+                    if (Context.Eliminar(Context.Buscar(p => p.CotizacionId == id)))
+                    {
+                        Limpiar();
+                        MessageBox.Show("La cotizacion se elimino con exito.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo eliminar la cotizacion.");
                     }
                 }
             }
