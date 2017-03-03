@@ -138,7 +138,7 @@
     <Compile Include="Registros\rUsuarios.Designer.cs">
       <DependentUpon>rUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="UtilidadesTiposProductos.cs" />
+    <Compile Include="Utilidades.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,8 +151,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Registros\rTiposProductos.resx">
-      <DependentUpon>rTiposProductos.cs</DependentUpon>
+    <EmbeddedResource Include="Registros\rCotizaciones.resx">
+      <DependentUpon>rCotizaciones.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />
