@@ -54,5 +54,10 @@ namespace CotizacionesTech
 
             MessageBox.Show("Cotizaciones creada" + cotizacion.ClienteId.ToString());
         }
+
+        private void NewButton_Click(object sender, EventArgs e)
+        {
+            new Registros.rCotizaciones().Show();
+        }
     }
 }
