@@ -139,6 +139,9 @@
       <DependentUpon>rUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilidades.cs" />
+    <EmbeddedResource Include="Consultas\cProductos.resx">
+      <DependentUpon>cProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\cUsuarios.resx">
       <DependentUpon>cUsuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\rCotizaciones.resx">
       <DependentUpon>rCotizaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\rProductos.resx">
+      <DependentUpon>rProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\rTiposProductos.resx">
       <DependentUpon>rTiposProductos.cs</DependentUpon>
