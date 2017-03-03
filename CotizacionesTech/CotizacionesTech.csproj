@@ -157,6 +157,9 @@
     <EmbeddedResource Include="Registros\rCotizaciones.resx">
       <DependentUpon>rCotizaciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Registros\rTiposProductos.resx">
+      <DependentUpon>rTiposProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
