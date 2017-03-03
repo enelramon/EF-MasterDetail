@@ -54,5 +54,38 @@ namespace CotizacionesTech
 
             MessageBox.Show("Cotizaciones creada" + cotizacion.ClienteId.ToString());
         }
+
+        private void NewButton_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void tiposDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CotizacionesTech.Registros.rTiposProductos db = new Registros.rTiposProductos();
+            db.Show();
+        }
+
+        private void cotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CotizacionesTech.Registros.rTiposProductos db = new Registros.rTiposProductos();
+            db.Show();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Consultas.cProductos().Show();
+        }
     }
 }
