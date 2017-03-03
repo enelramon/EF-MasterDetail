@@ -27,18 +27,13 @@ namespace CotizacionesTech
                 ProductoId = 0,
                 Descripcion = "Cebolla",
                 Precio = 100
-
             };
 
             cliente = new Entidades.Clientes
             {
                 ClienteId = 0,
                 Nombres = "Enel"
-
             };
-
-            
-
 
             producto = BLL.Productos.Guardar(producto);
             cliente = BLL.Clientes.Guardar(cliente);
@@ -74,13 +69,17 @@ namespace CotizacionesTech
 
         private void cotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CotizacionesTech.Registros.rTiposProductos db = new Registros.rTiposProductos();
-            db.Show();
+            new Registros.rCotizaciones().Show();
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new Registros.rClientes().Show();
         }
     }
 }

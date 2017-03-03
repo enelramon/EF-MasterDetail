@@ -154,6 +154,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Registros\rClientes.resx">
+      <DependentUpon>rClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registros\rCotizaciones.resx">
       <DependentUpon>rCotizaciones.cs</DependentUpon>
     </EmbeddedResource>
