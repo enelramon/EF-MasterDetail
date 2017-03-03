@@ -26,18 +26,31 @@ namespace CotizacionesTech.Consultas
             {
                 if (String.IsNullOrEmpty(textBoxPrecioDesde.Text) || String.IsNullOrEmpty(textBoxPrecioHasta.Text))
                 {
+                    errorProvider.SetError(textBoxPrecioDesde, "Esta vacio!");
+                    errorProvider.SetError(textBoxPrecioHasta, "Esta vacio!");
                     return false;
                 }
-                else return true;
+                else
+                {
+                    errorProvider.Clear();
+                    return true;
+                }
 
             }
             else
             {
                 if (String.IsNullOrEmpty(textBoxSearch.Text))
                 {
+
+                    errorProvider.SetError(textBoxSearch, "Esta vacio!");
                     return false;
                 }
-                else return true;
+                
+                else 
+                {
+                    errorProvider.Clear();
+                    return true;
+                }
                 
             }
         }

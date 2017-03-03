@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridViewProductos = new System.Windows.Forms.DataGridView();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
@@ -36,7 +37,9 @@
             this.textBoxPrecioHasta = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewProductos
@@ -101,6 +104,7 @@
             this.label1.Size = new System.Drawing.Size(72, 13);
             this.label1.TabIndex = 10;
             this.label1.Text = "Precio desde:";
+            this.label1.Visible = false;
             // 
             // label2
             // 
@@ -110,9 +114,11 @@
             this.label2.Size = new System.Drawing.Size(69, 13);
             this.label2.TabIndex = 11;
             this.label2.Text = "Precio hasta:";
-
-            label1.Visible = false;
-            label2.Visible = false;
+            this.label2.Visible = false;
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // cProductos
             // 
@@ -130,6 +136,7 @@
             this.Name = "cProductos";
             this.Text = "cProductos";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,5 +152,6 @@
         private System.Windows.Forms.TextBox textBoxPrecioHasta;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
