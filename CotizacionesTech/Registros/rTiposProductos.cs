@@ -15,16 +15,15 @@ namespace CotizacionesTech.Registros
         public rTiposProductos()
         {
             InitializeComponent();
+        
         }
 
-        bool estado=false;
-        private void Limpiar()
+       private void Limpiar()
         {
             IDTipoTextBox.Clear();
             nombreTipoTextBox.Clear();
+            checkBoxesActivo.Checked = false;
             nombreTipoTextBox.Focus();
-            radioButtonActivo.Checked = true;
-            radioButtonNoactivo.Checked = false;
 
         }
 
@@ -43,9 +42,8 @@ namespace CotizacionesTech.Registros
         }
 
         private void rTiposProductos_Load(object sender, EventArgs e)
-        {
-            radioButtonActivo.Checked = true;
-
+        {     
+        
         }
 
         private void NewButton_Click(object sender, EventArgs e)
@@ -55,42 +53,59 @@ namespace CotizacionesTech.Registros
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
+            var guardar = new Entidades.TiposProductos();
+            int id = 0;
+
             try
             {
-                var guardar = new Entidades.TiposProductos();
-
-                guardar.Tipo = nombreTipoTextBox.Text;
-                guardar.TipoId = (UtilidadesTiposProductos.TOINT(IDTipoTextBox.Text));
-                guardar.esActivo=  estado;
-              
-
-                if (!Validar())
+                using (var Context = new DAL.Repositorio<Entidades.TiposProductos>())
                 {
-                    MessageBox.Show("Por favor llenar los campos");
-                }
-                else if (BLL.TiposProductos.Guardar(guardar))
-                {
-                    MessageBox.Show("Nuevo tipo articulo agregado con exito!");
-                }
+                    if (!Validar())
+                    {
+                        MessageBox.Show("Por favor llenar los campos");
+                    }
+                    else
+                    {
+                        //No Crei necesario crear una funcion llenar campos ya que son pocas cosas que se deben guardar 
+                        guardar.Tipo = nombreTipoTextBox.Text;
+                        guardar.TipoId = (UtilidadesTiposProductos.TOINT(IDTipoTextBox.Text));
 
-                Limpiar();
+                        //Asigna true o false al checkBox segun selecione el usuario
+                        if (checkBoxesActivo.Checked == false)
+                        {
 
+                            guardar.esActivo = false;
+                        }
+                        else
+                        {
+                            guardar.esActivo = true;
+                        }
+                        ////////////////////////////////////////////
+
+
+                        //Modifica si es necesario  de lo contrario guarda 
+                        if (id != guardar.TipoId)
+                        {
+                            Context.Modificar(guardar);
+                            BLL.TiposProductos.Guardar(guardar);
+                            MessageBox.Show("Tipo de articulo modificado");
+                        }
+                        else
+                        {
+                            BLL.TiposProductos.Guardar(guardar);
+                            MessageBox.Show("Nuevo tipo articulo agregado con exito!");
+                        }
+                    }
+
+                    Limpiar();
+
+                }
             }
             catch (Exception)
             {
 
                 throw;
             }
-        }
-
-        private void radioButtonActivo_CheckedChanged(object sender, EventArgs e)
-        {
-            estado = true;
-        }
-
-        private void radioButtonNoactivo_CheckedChanged(object sender, EventArgs e)
-        {
-            estado = false;
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -104,19 +119,9 @@ namespace CotizacionesTech.Registros
                 {
                   
                     nombreTipoTextBox.Text = tipo.Tipo;
-                    if(estado == true)
-                    {
-                        //    bool r = false;
-                        radioButtonNoactivo.Checked = true;
-                    //    radioButtonActivo.Checked = true;
-                    }
-                    else
-                    {
-                        radioButtonActivo.Checked = true;
-                       // radioButtonNoactivo.Checked = false;
-                    }
-
-                    MessageBox.Show("Resultados");
+                    checkBoxesActivo.Checked = tipo.esActivo;
+                   
+                    MessageBox.Show("Resultados de su busqueda");
                 }
                 else
                 {
@@ -142,5 +147,12 @@ namespace CotizacionesTech.Registros
                 }
             }
         }
+
+        private void esActivo_CheckedChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+   
     }
 }
