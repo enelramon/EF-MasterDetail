@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
+﻿using System.Data.Entity;
 
 namespace DAL
 {
@@ -17,5 +13,6 @@ namespace DAL
         public DbSet<Entidades.Clientes> Clientes { get; set; }
         public DbSet<Entidades.Cotizaciones> Cotizaciones { get; set; }
 
+        
     }
 }
