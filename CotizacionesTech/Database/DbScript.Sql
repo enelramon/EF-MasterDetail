@@ -10,3 +10,8 @@ Fecha Date,
 ClienteId int,
 Monto decimal
 );
+
+/* Tabla Productos -- Luis Tejada -- */
+create table Productos(ProductoId int primary key identity(1,1), Descripcion varchar(60), Medida varchar(30), Itbis bit, Costo decimal, Precio decimal);
+
+

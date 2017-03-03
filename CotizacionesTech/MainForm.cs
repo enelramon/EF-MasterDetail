@@ -82,5 +82,10 @@ namespace CotizacionesTech
         {
             this.Close();
         }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Consultas.cProductos().Show();
+        }
     }
 }
