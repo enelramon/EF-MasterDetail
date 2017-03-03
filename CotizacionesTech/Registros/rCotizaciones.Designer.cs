@@ -97,6 +97,7 @@
             // 
             // ClienteIdcomboBox
             // 
+            this.ClienteIdcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ClienteIdcomboBox.FormattingEnabled = true;
             this.ClienteIdcomboBox.Location = new System.Drawing.Point(159, 133);
             this.ClienteIdcomboBox.Name = "ClienteIdcomboBox";

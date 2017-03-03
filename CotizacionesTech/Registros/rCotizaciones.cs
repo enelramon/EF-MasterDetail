@@ -39,6 +39,20 @@ namespace CotizacionesTech.Registros
             return interruptor;
         }
 
+        private void LlenarCombo()
+        {
+            var llenar = new DAL.CotizacionesDb();
+            using(var Context = new DAL.Repositorio<Entidades.Clientes>())
+            {
+                List<Entidades.Clientes> lista = Context.ListaTodo();
+
+                ClienteIdcomboBox.DataSource = lista;
+                ClienteIdcomboBox.DisplayMember = "Nombres";
+                ClienteIdcomboBox.ValueMember = "ClienteId";
+            }
+            
+        }
+
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
             Limpiar();
@@ -59,7 +73,7 @@ namespace CotizacionesTech.Registros
                 {
                     cotizacion.CotizacionId = Utilidades.TOINT(CotizacionIdtextBox.Text);
                     cotizacion.Fecha = FechadateTimePicker.Value;
-                    //cotizacion.ClienteId = Convert.ToUInt32(ClienteIdcomboBox.Text);
+                    cotizacion.ClienteId = Utilidades.TOINT(ClienteIdcomboBox.Text);
                     cotizacion.Monto = Convert.ToDecimal(MontotextBox.Text);
 
                     if (id != cotizacion.CotizacionId)
@@ -92,7 +106,7 @@ namespace CotizacionesTech.Registros
             {
                 FechadateTimePicker.Value = cotizacion.Fecha;
                 MontotextBox.Text = cotizacion.Monto.ToString();
-                //ClienteIdcomboBox.Text = cotizacion.ClienteId;
+                ClienteIdcomboBox.Text = cotizacion.ClienteId.ToString();
             }
             else
             {
