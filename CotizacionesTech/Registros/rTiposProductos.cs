@@ -46,12 +46,17 @@ namespace CotizacionesTech.Registros
         
         }
 
-        private void NewButton_Click(object sender, EventArgs e)
+        private void esActivo_CheckedChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             Limpiar();
         }
 
-        private void SaveButton_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             var guardar = new Entidades.TiposProductos();
             int id = 0;
@@ -68,7 +73,7 @@ namespace CotizacionesTech.Registros
                     {
                         //No Crei necesario crear una funcion llenar campos ya que son pocas cosas que se deben guardar 
                         guardar.Tipo = nombreTipoTextBox.Text;
-                        guardar.TipoId = (UtilidadesTiposProductos.TOINT(IDTipoTextBox.Text));
+                        guardar.TipoId = (Utilidades.TOINT(IDTipoTextBox.Text));
 
                         //Asigna true o false al checkBox segun selecione el usuario
                         if (checkBoxesActivo.Checked == false)
@@ -108,29 +113,7 @@ namespace CotizacionesTech.Registros
             }
         }
 
-        private void searchButton_Click(object sender, EventArgs e)
-        {
-            int id = int.Parse(IDTipoTextBox.Text);
-            Entidades.TiposProductos tipo;
-            using (var db = new DAL.Repositorio<Entidades.TiposProductos>())
-            {
-                tipo = db.Buscar(p => p.TipoId == id);
-                if (tipo != null)
-                {
-                  
-                    nombreTipoTextBox.Text = tipo.Tipo;
-                    checkBoxesActivo.Checked = tipo.esActivo;
-                   
-                    MessageBox.Show("Resultados de su busqueda");
-                }
-                else
-                {
-                    MessageBox.Show("No existe ningun Articulo con ese Id.");
-                }
-            }
-        }
-
-        private void Deletebutton_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
             int id = int.Parse(IDTipoTextBox.Text);
             using (var db = new DAL.Repositorio<Entidades.TiposProductos>())
@@ -148,11 +131,27 @@ namespace CotizacionesTech.Registros
             }
         }
 
-        private void esActivo_CheckedChanged(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-           
-        }
 
-   
+            int id = int.Parse(IDTipoTextBox.Text);
+            Entidades.TiposProductos tipo;
+            using (var db = new DAL.Repositorio<Entidades.TiposProductos>())
+            {
+                tipo = db.Buscar(p => p.TipoId == id);
+                if (tipo != null)
+                {
+
+                    nombreTipoTextBox.Text = tipo.Tipo;
+                    checkBoxesActivo.Checked = tipo.esActivo;
+
+                    MessageBox.Show("Resultados de su busqueda");
+                }
+                else
+                {
+                    MessageBox.Show("No existe ningun Articulo con ese Id.");
+                }
+            }
+        }
     }
 }

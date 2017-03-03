@@ -29,43 +29,41 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label actorIdLabel;
-            System.Windows.Forms.Label nombreLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rTiposProductos));
+            this.actorIdLabel = new System.Windows.Forms.Label();
+            this.nombreLabel = new System.Windows.Forms.Label();
             this.IDTipoTextBox = new System.Windows.Forms.TextBox();
             this.nombreTipoTextBox = new System.Windows.Forms.TextBox();
             this.errorProviderNombre = new System.Windows.Forms.ErrorProvider(this.components);
-            this.NewButton = new System.Windows.Forms.Button();
-            this.SaveButton = new System.Windows.Forms.Button();
-            this.Deletebutton = new System.Windows.Forms.Button();
-            this.searchButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkBoxesActivo = new System.Windows.Forms.CheckBox();
-            actorIdLabel = new System.Windows.Forms.Label();
-            nombreLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderNombre)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // actorIdLabel
             // 
-            actorIdLabel.AutoSize = true;
-            actorIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            actorIdLabel.Location = new System.Drawing.Point(17, 37);
-            actorIdLabel.Name = "actorIdLabel";
-            actorIdLabel.Size = new System.Drawing.Size(21, 17);
-            actorIdLabel.TabIndex = 26;
-            actorIdLabel.Text = "ID";
+            this.actorIdLabel.AutoSize = true;
+            this.actorIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.actorIdLabel.Location = new System.Drawing.Point(17, 37);
+            this.actorIdLabel.Name = "actorIdLabel";
+            this.actorIdLabel.Size = new System.Drawing.Size(21, 17);
+            this.actorIdLabel.TabIndex = 26;
+            this.actorIdLabel.Text = "ID";
             // 
             // nombreLabel
             // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            nombreLabel.Location = new System.Drawing.Point(17, 63);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(135, 17);
-            nombreLabel.TabIndex = 28;
-            nombreLabel.Text = "NOMBRE DEL TIPO";
+            this.nombreLabel.AutoSize = true;
+            this.nombreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.nombreLabel.Location = new System.Drawing.Point(17, 63);
+            this.nombreLabel.Name = "nombreLabel";
+            this.nombreLabel.Size = new System.Drawing.Size(135, 17);
+            this.nombreLabel.TabIndex = 28;
+            this.nombreLabel.Text = "NOMBRE DEL TIPO";
             // 
             // IDTipoTextBox
             // 
@@ -86,70 +84,6 @@
             // errorProviderNombre
             // 
             this.errorProviderNombre.ContainerControl = this;
-            // 
-            // NewButton
-            // 
-            this.NewButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.NewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewButton.Image = ((System.Drawing.Image)(resources.GetObject("NewButton.Image")));
-            this.NewButton.Location = new System.Drawing.Point(26, 172);
-            this.NewButton.Margin = new System.Windows.Forms.Padding(2);
-            this.NewButton.Name = "NewButton";
-            this.NewButton.Size = new System.Drawing.Size(66, 51);
-            this.NewButton.TabIndex = 38;
-            this.NewButton.Text = "Nuevo";
-            this.NewButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.NewButton.UseVisualStyleBackColor = true;
-            this.NewButton.Click += new System.EventHandler(this.NewButton_Click);
-            // 
-            // SaveButton
-            // 
-            this.SaveButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.SaveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.SaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveButton.Image")));
-            this.SaveButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.SaveButton.Location = new System.Drawing.Point(126, 171);
-            this.SaveButton.Margin = new System.Windows.Forms.Padding(2);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(66, 52);
-            this.SaveButton.TabIndex = 39;
-            this.SaveButton.Text = "Guardar";
-            this.SaveButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.SaveButton.UseVisualStyleBackColor = true;
-            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
-            // 
-            // Deletebutton
-            // 
-            this.Deletebutton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Deletebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Deletebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Deletebutton.Image = ((System.Drawing.Image)(resources.GetObject("Deletebutton.Image")));
-            this.Deletebutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Deletebutton.Location = new System.Drawing.Point(218, 172);
-            this.Deletebutton.Margin = new System.Windows.Forms.Padding(2);
-            this.Deletebutton.Name = "Deletebutton";
-            this.Deletebutton.Size = new System.Drawing.Size(60, 52);
-            this.Deletebutton.TabIndex = 40;
-            this.Deletebutton.Text = "Eliminar";
-            this.Deletebutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Deletebutton.UseVisualStyleBackColor = true;
-            this.Deletebutton.Click += new System.EventHandler(this.Deletebutton_Click);
-            // 
-            // searchButton
-            // 
-            this.searchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchButton.Image = ((System.Drawing.Image)(resources.GetObject("searchButton.Image")));
-            this.searchButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.searchButton.Location = new System.Drawing.Point(223, 31);
-            this.searchButton.Margin = new System.Windows.Forms.Padding(2);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(61, 29);
-            this.searchButton.TabIndex = 37;
-            this.searchButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // groupBox1
             // 
@@ -174,19 +108,83 @@
             this.checkBoxesActivo.UseVisualStyleBackColor = true;
             this.checkBoxesActivo.CheckedChanged += new System.EventHandler(this.esActivo_CheckedChanged);
             // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(28, 171);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(66, 51);
+            this.button1.TabIndex = 44;
+            this.button1.Text = "Nuevo";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button2.Location = new System.Drawing.Point(127, 169);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(66, 52);
+            this.button2.TabIndex = 45;
+            this.button2.Text = "Guardar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button3.Location = new System.Drawing.Point(214, 171);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(60, 52);
+            this.button3.TabIndex = 46;
+            this.button3.Text = "Eliminar";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button4.Location = new System.Drawing.Point(225, 29);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(61, 29);
+            this.button4.TabIndex = 47;
+            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // rTiposProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 234);
+            this.ClientSize = new System.Drawing.Size(314, 257);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.NewButton);
-            this.Controls.Add(this.SaveButton);
-            this.Controls.Add(this.Deletebutton);
-            this.Controls.Add(this.searchButton);
-            this.Controls.Add(actorIdLabel);
+            this.Controls.Add(this.actorIdLabel);
             this.Controls.Add(this.IDTipoTextBox);
-            this.Controls.Add(nombreLabel);
+            this.Controls.Add(this.nombreLabel);
             this.Controls.Add(this.nombreTipoTextBox);
             this.Name = "rTiposProductos";
             this.Text = "TIPOS DE PRODUCTOS";
@@ -203,11 +201,13 @@
         private System.Windows.Forms.TextBox IDTipoTextBox;
         private System.Windows.Forms.TextBox nombreTipoTextBox;
         private System.Windows.Forms.ErrorProvider errorProviderNombre;
-        private System.Windows.Forms.Button NewButton;
-        private System.Windows.Forms.Button SaveButton;
-        private System.Windows.Forms.Button Deletebutton;
-        private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox checkBoxesActivo;
+        private System.Windows.Forms.Label actorIdLabel;
+        private System.Windows.Forms.Label nombreLabel;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
