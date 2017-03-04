@@ -33,7 +33,7 @@ namespace CotizacionesTech.Consultas
             }
             else if (FiltrarComboBox.SelectedIndex == 1)
             {
-                UsuariosDataGridView.DataSource = BLL.Ususarios.GetListNombre(FiltrarTextBox.Text));
+                UsuariosDataGridView.DataSource = BLL.Ususarios.GetListNombre(FiltrarTextBox.Text);
             }
             else
             {
