@@ -46,13 +46,13 @@
             this.ClientesdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ClientesdataGridView.Location = new System.Drawing.Point(12, 78);
             this.ClientesdataGridView.Name = "ClientesdataGridView";
-            this.ClientesdataGridView.Size = new System.Drawing.Size(832, 220);
+            this.ClientesdataGridView.Size = new System.Drawing.Size(857, 220);
             this.ClientesdataGridView.TabIndex = 0;
             // 
             // Filtrarbutton
             // 
             this.Filtrarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Filtrarbutton.Location = new System.Drawing.Point(772, 49);
+            this.Filtrarbutton.Location = new System.Drawing.Point(797, 49);
             this.Filtrarbutton.Name = "Filtrarbutton";
             this.Filtrarbutton.Size = new System.Drawing.Size(75, 23);
             this.Filtrarbutton.TabIndex = 1;
@@ -63,7 +63,7 @@
             // BuscartextBox
             // 
             this.BuscartextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BuscartextBox.Location = new System.Drawing.Point(627, 49);
+            this.BuscartextBox.Location = new System.Drawing.Point(652, 49);
             this.BuscartextBox.Name = "BuscartextBox";
             this.BuscartextBox.Size = new System.Drawing.Size(139, 20);
             this.BuscartextBox.TabIndex = 2;
@@ -73,7 +73,7 @@
             // 
             this.ConsultacomboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ConsultacomboBox.FormattingEnabled = true;
-            this.ConsultacomboBox.Location = new System.Drawing.Point(435, 48);
+            this.ConsultacomboBox.Location = new System.Drawing.Point(460, 48);
             this.ConsultacomboBox.Name = "ConsultacomboBox";
             this.ConsultacomboBox.Size = new System.Drawing.Size(177, 21);
             this.ConsultacomboBox.TabIndex = 4;
@@ -95,7 +95,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 342);
+            this.ClientSize = new System.Drawing.Size(881, 342);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ConsultacomboBox);
             this.Controls.Add(this.BuscartextBox);
