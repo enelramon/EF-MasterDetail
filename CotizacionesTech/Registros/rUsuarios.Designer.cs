@@ -79,6 +79,7 @@
             // 
             this.ConfirmartextBox.Location = new System.Drawing.Point(12, 142);
             this.ConfirmartextBox.Name = "ConfirmartextBox";
+            this.ConfirmartextBox.PasswordChar = '*';
             this.ConfirmartextBox.Size = new System.Drawing.Size(158, 20);
             this.ConfirmartextBox.TabIndex = 3;
             // 
@@ -86,6 +87,7 @@
             // 
             this.ClavetextBox.Location = new System.Drawing.Point(12, 103);
             this.ClavetextBox.Name = "ClavetextBox";
+            this.ClavetextBox.PasswordChar = '*';
             this.ClavetextBox.Size = new System.Drawing.Size(158, 20);
             this.ClavetextBox.TabIndex = 4;
             // 

@@ -45,9 +45,9 @@ namespace CotizacionesTech.Registros
             ClavetextBox.Clear();
             ConfirmartextBox.Clear();
 
-            NombreerrorProvider.Clear();
+           /* NombreerrorProvider.Clear();
 
-            NombretextBox.Focus();
+            NombretextBox.Focus();*/
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
