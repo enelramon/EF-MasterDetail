@@ -22,17 +22,23 @@ namespace CotizacionesTech.Registros
             CotizacionIdtextBox.Clear();
             FechadateTimePicker.Value = DateTime.Today;
             ClienteIdcomboBox.Text = " ";
-            MontotextBox.Clear();
+            MontomaskedTextBox.Clear();
             MontoerrorProvider.Clear();
+            ClienteIderrorProvider.Clear();
         }
 
         private bool Validar()
         {
             bool interruptor = true;
 
-            if (string.IsNullOrEmpty(MontotextBox.Text))
+            if (string.IsNullOrEmpty(MontomaskedTextBox.Text))
             {
-                MontoerrorProvider.SetError(MontotextBox, "Por favor llenar el campo vacio.");
+                MontoerrorProvider.SetError(MontomaskedTextBox, "Por favor llenar el campo vacio.");
+                interruptor = false;
+            }
+            if (string.IsNullOrEmpty(ClienteIdcomboBox.Text))
+            {
+                ClienteIderrorProvider.SetError(ClienteIdcomboBox, "Por favor llenar el campo vacio.");
                 interruptor = false;
             }
 
@@ -53,17 +59,40 @@ namespace CotizacionesTech.Registros
             
         }
 
-        private void Nuevobutton_Click(object sender, EventArgs e)
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            var cotizacion = new Entidades.Cotizaciones();
+            int id = Utilidades.TOINT(CotizacionIdtextBox.Text);
+
+            using (var Context = new DAL.Repositorio<Entidades.Cotizaciones>())
+            {
+                cotizacion = Context.Buscar(p => p.CotizacionId == id);
+            }
+
+            if (cotizacion != null)
+            {
+                FechadateTimePicker.Value = cotizacion.Fecha;
+                MontomaskedTextBox.Text = cotizacion.Monto.ToString();
+                ClienteIdcomboBox.Text = cotizacion.ClienteId.ToString();
+            }
+            else
+            {
+                MessageBox.Show("No existe cliente con ese Id.");
+                Limpiar();
+            }
+        }
+
+        private void NewButton_Click(object sender, EventArgs e)
         {
             Limpiar();
         }
 
-        private void Guardarbutton_Click(object sender, EventArgs e)
+        private void SaveButton_Click(object sender, EventArgs e)
         {
             var cotizacion = new Entidades.Cotizaciones();
             int id = 0;
 
-            using(var Context = new DAL.Repositorio<Entidades.Cotizaciones>())
+            using (var Context = new DAL.Repositorio<Entidades.Cotizaciones>())
             {
                 if (!Validar())
                 {
@@ -74,7 +103,7 @@ namespace CotizacionesTech.Registros
                     cotizacion.CotizacionId = Utilidades.TOINT(CotizacionIdtextBox.Text);
                     cotizacion.Fecha = FechadateTimePicker.Value;
                     cotizacion.ClienteId = Utilidades.TOINT(ClienteIdcomboBox.Text);
-                    cotizacion.Monto = Convert.ToDecimal(MontotextBox.Text);
+                    cotizacion.Monto = Convert.ToDecimal(MontomaskedTextBox.Text);
 
                     if (id != cotizacion.CotizacionId)
                     {
@@ -92,30 +121,7 @@ namespace CotizacionesTech.Registros
             }
         }
 
-        private void Buscarbutton_Click(object sender, EventArgs e)
-        {
-            var cotizacion = new Entidades.Cotizaciones();
-            int id = Utilidades.TOINT(CotizacionIdtextBox.Text);
-
-            using(var Context = new DAL.Repositorio<Entidades.Cotizaciones>())
-            {
-                cotizacion = Context.Buscar(p => p.CotizacionId == id);
-            }
-
-            if(cotizacion != null)
-            {
-                FechadateTimePicker.Value = cotizacion.Fecha;
-                MontotextBox.Text = cotizacion.Monto.ToString();
-                ClienteIdcomboBox.Text = cotizacion.ClienteId.ToString();
-            }
-            else
-            {
-                MessageBox.Show("No existe cliente con ese Id.");
-                Limpiar();
-            }
-        }
-
-        private void Eliminarbutton_Click(object sender, EventArgs e)
+        private void Deletebutton_Click(object sender, EventArgs e)
         {
             if (!Validar())
             {
@@ -138,6 +144,11 @@ namespace CotizacionesTech.Registros
                     }
                 }
             }
+        }
+
+        private void rCotizaciones_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
