@@ -32,6 +32,7 @@
             this.Filtrarbutton = new System.Windows.Forms.Button();
             this.BuscartextBox = new System.Windows.Forms.TextBox();
             this.ConsultacomboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ClientesdataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,16 +70,26 @@
             // 
             this.ConsultacomboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ConsultacomboBox.FormattingEnabled = true;
-            this.ConsultacomboBox.Location = new System.Drawing.Point(435, 49);
+            this.ConsultacomboBox.Location = new System.Drawing.Point(450, 48);
             this.ConsultacomboBox.Name = "ConsultacomboBox";
             this.ConsultacomboBox.Size = new System.Drawing.Size(177, 21);
             this.ConsultacomboBox.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(281, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(153, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Seleccione la opcion deseada.";
             // 
             // cClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(871, 342);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ConsultacomboBox);
             this.Controls.Add(this.BuscartextBox);
             this.Controls.Add(this.Filtrarbutton);
@@ -98,5 +109,6 @@
         private System.Windows.Forms.Button Filtrarbutton;
         private System.Windows.Forms.TextBox BuscartextBox;
         private System.Windows.Forms.ComboBox ConsultacomboBox;
+        private System.Windows.Forms.Label label1;
     }
 }
