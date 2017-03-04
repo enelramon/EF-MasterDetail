@@ -27,6 +27,11 @@ namespace CotizacionesTech.Registros
             LimiteCreditotextBox.Clear();
 
             NombreerrorProvider.Clear();
+            DireccionerrorProvider.Clear();
+            EmailerrorProvider.Clear();
+            TelefonoerrorProvider.Clear();
+            CelularerrorProvider.Clear();
+            LimiteCreditoerrorProvider.Clear();
 
             NombretextBox.Focus();
         }     
