@@ -169,6 +169,9 @@
     <EmbeddedResource Include="Registros\rTiposProductos.resx">
       <DependentUpon>rTiposProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Registros\rUsuarios.resx">
+      <DependentUpon>rUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -93,5 +93,11 @@ namespace CotizacionesTech
             CotizacionesTech.Registros.rProductos db = new Registros.rProductos();
             db.Show();
         }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CotizacionesTech.Registros.rUsuarios db = new Registros.rUsuarios();
+            db.Show();
+        }
     }
 }
