@@ -87,5 +87,11 @@ namespace CotizacionesTech
         {
             new Consultas.cProductos().Show();
         }
+
+        private void productosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            CotizacionesTech.Registros.rProductos db = new Registros.rProductos();
+            db.Show();
+        }
     }
 }
