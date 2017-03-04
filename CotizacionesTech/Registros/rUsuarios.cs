@@ -89,5 +89,54 @@ namespace CotizacionesTech.Registros
         {
             Limpiar();
         }
+
+        private void Buscarbutton_Click(object sender, EventArgs e)
+        {
+            var usuario = new Entidades.Usuarios();
+            int id = Utilidades.TOINT(IdtextBox.Text);
+
+            using (var conec = new DAL.Repositorio<Entidades.Usuarios>())
+            {
+                usuario = conec.Buscar(p => p.UsuarioId == id);
+            }
+
+            if (usuario != null)
+            {
+                NombretextBox.Text = usuario.Nombre;
+                ClavetextBox.Text = usuario.Clave;
+                ConfirmartextBox.Text = usuario.Clave;
+                
+            }
+            else
+            {
+                MessageBox.Show("No existe el usuario con ese id.");
+                Limpiar();
+            }
+        }
+
+        private void Eliminarbutton_Click(object sender, EventArgs e)
+        {
+            if (!Validar())
+            {
+                MessageBox.Show("Los campos estan vacios");
+            }
+            else
+            {
+                int id = Utilidades.TOINT(IdtextBox.Text);
+
+                using (var conec = new DAL.Repositorio<Entidades.Usuarios>())
+                {
+                    if (conec.Eliminar(conec.Buscar(p => p.UsuarioId == id)))
+                    {
+                        Limpiar();
+                        MessageBox.Show("Usuario eliminado con exito.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo eliminar el Usuario.");
+                    }
+                }
+            }
+        }
     }
 }
