@@ -92,5 +92,10 @@ namespace CotizacionesTech
             CotizacionesTech.Registros.rProductos db = new Registros.rProductos();
             db.Show();
         }
+
+        private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new Registros.rClientes().Show();
+        }
     }
 }
