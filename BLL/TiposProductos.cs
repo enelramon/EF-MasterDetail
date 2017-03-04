@@ -8,27 +8,18 @@ namespace BLL
 {
   public  class TiposProductos
     {
-        public static bool Guardar(Entidades.TiposProductos nuevo)
+        //Me vi en la necesidad de crear la BLL ya que no existia al momento de clonar el proyecto
+        public static Entidades.TiposProductos Guardar(Entidades.TiposProductos nuevo)
         {
-            bool retorno = false;
-            using (var db = new Repositorio<Entidades.TiposProductos>())
+            Entidades.TiposProductos creado = null;
+            using (var repositorio = new Repositorio<Entidades.TiposProductos>())
             {
-                retorno = db.Guardar(nuevo) != null;
+                creado = repositorio.Guardar(nuevo);
             }
-            return retorno;
+
+            return creado;
 
         }
 
-
-        public static bool Eliminar(Entidades.TiposProductos ID)
-        {
-            bool resultado = false;
-            using (var db = new Repositorio<Entidades.TiposProductos>())
-            {
-                resultado = db.Eliminar(ID);
-
-            }
-            return resultado;
-        }
     }
 }
