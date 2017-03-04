@@ -74,8 +74,7 @@ namespace CotizacionesTech
 
         private void cotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CotizacionesTech.Registros.rTiposProductos db = new Registros.rTiposProductos();
-            db.Show();
+            new Registros.rCotizaciones().Show();
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
