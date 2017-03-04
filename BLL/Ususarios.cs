@@ -17,5 +17,29 @@ namespace BLL
             }
             return hecho;
         }
+
+        public static List<Entidades.Usuarios> GetList()
+        {
+            using (var repositorio = new Repositorio<Entidades.Usuarios>())
+            {
+                return (repositorio.ListaTodo());
+            }
+        }
+
+        public static List<Entidades.Usuarios> GetListNombre(String nombre)
+        {
+            using (var repositorio = new Repositorio<Entidades.Usuarios>())
+            {
+                return (repositorio.Lista(U => U.Nombre == nombre));
+            }
+        }
+
+        public static List<Entidades.Usuarios> GetListId(int usuarioId)
+        {
+            using (var repositorio = new Repositorio<Entidades.Usuarios>())
+            {
+                return (repositorio.Lista(U => U.UsuarioId == usuarioId));
+            }
+        }
     }
 }
