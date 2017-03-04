@@ -102,6 +102,24 @@ namespace  DAL
             return Result;
         }
 
+        public List<TEntity> ListaTodo()
+        {
+            using (var Conec = new DAL.CotizacionesDb())
+            {
+                try
+                {
+                    return EntitySet.ToList();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+
+            return null;
+        }
+
         public void Dispose()
         {
             if (Contex != null)
