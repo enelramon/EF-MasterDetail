@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ClientesdataGridView = new System.Windows.Forms.DataGridView();
             this.Filtrarbutton = new System.Windows.Forms.Button();
             this.BuscartextBox = new System.Windows.Forms.TextBox();
             this.ConsultacomboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.BuscarError = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ClientesdataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BuscarError)).BeginInit();
             this.SuspendLayout();
             // 
             // ClientesdataGridView
@@ -43,13 +46,13 @@
             this.ClientesdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ClientesdataGridView.Location = new System.Drawing.Point(12, 78);
             this.ClientesdataGridView.Name = "ClientesdataGridView";
-            this.ClientesdataGridView.Size = new System.Drawing.Size(807, 220);
+            this.ClientesdataGridView.Size = new System.Drawing.Size(839, 220);
             this.ClientesdataGridView.TabIndex = 0;
             // 
             // Filtrarbutton
             // 
             this.Filtrarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Filtrarbutton.Location = new System.Drawing.Point(747, 49);
+            this.Filtrarbutton.Location = new System.Drawing.Point(779, 49);
             this.Filtrarbutton.Name = "Filtrarbutton";
             this.Filtrarbutton.Size = new System.Drawing.Size(75, 23);
             this.Filtrarbutton.TabIndex = 1;
@@ -60,7 +63,7 @@
             // BuscartextBox
             // 
             this.BuscartextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BuscartextBox.Location = new System.Drawing.Point(602, 49);
+            this.BuscartextBox.Location = new System.Drawing.Point(634, 49);
             this.BuscartextBox.Name = "BuscartextBox";
             this.BuscartextBox.Size = new System.Drawing.Size(139, 20);
             this.BuscartextBox.TabIndex = 2;
@@ -70,7 +73,7 @@
             // 
             this.ConsultacomboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ConsultacomboBox.FormattingEnabled = true;
-            this.ConsultacomboBox.Location = new System.Drawing.Point(410, 48);
+            this.ConsultacomboBox.Location = new System.Drawing.Point(442, 48);
             this.ConsultacomboBox.Name = "ConsultacomboBox";
             this.ConsultacomboBox.Size = new System.Drawing.Size(177, 21);
             this.ConsultacomboBox.TabIndex = 4;
@@ -84,11 +87,15 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Seleccione la opcion deseada.";
             // 
+            // BuscarError
+            // 
+            this.BuscarError.ContainerControl = this;
+            // 
             // cClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 342);
+            this.ClientSize = new System.Drawing.Size(863, 342);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ConsultacomboBox);
             this.Controls.Add(this.BuscartextBox);
@@ -98,6 +105,7 @@
             this.Text = "cClientes";
             this.Load += new System.EventHandler(this.cClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ClientesdataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BuscarError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,5 +118,6 @@
         private System.Windows.Forms.TextBox BuscartextBox;
         private System.Windows.Forms.ComboBox ConsultacomboBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider BuscarError;
     }
 }

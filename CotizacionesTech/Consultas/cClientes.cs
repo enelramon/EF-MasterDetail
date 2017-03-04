@@ -9,11 +9,12 @@ namespace CotizacionesTech.Consultas
         public cClientes()
         {
             InitializeComponent();
+            LLenarComboBox();
         }
 
         private void cClientes_Load(object sender, EventArgs e)
         {
-            LLenarComboBox();
+            
         }
 
         public void LLenarComboBox()
@@ -25,47 +26,63 @@ namespace CotizacionesTech.Consultas
             ConsultacomboBox.Items.Insert(4, "Telefono");
             ConsultacomboBox.Items.Insert(5, "Celular");
             ConsultacomboBox.Items.Insert(6, "LimiteCredito");
-
             ConsultacomboBox.DataSource = ConsultacomboBox.Items;
             ConsultacomboBox.DisplayMember = "ClienteId";
+        }
+
+        public bool Validar()
+        {
+            if (string.IsNullOrEmpty(BuscartextBox.Text))
+            {
+                BuscarError.SetError(BuscartextBox, "Favor llenar el campo");
+                return false;
+            }
+            return true;
         }
 
         public void SeleccionarOpcionCombo()
         {
 
-            if (ConsultacomboBox.SelectedIndex == 0)
+            if (!Validar())
             {
-                ConsultacomboBox.DataSource = BLL.Clientes.GetListId(Convert.ToInt32(BuscartextBox.Text));
+                MessageBox.Show("Favor de llenar el campo");
             }
-
-            if (ConsultacomboBox.SelectedIndex == 1)
+            else
             {
-                ConsultacomboBox.DataSource = BLL.Clientes.GetListNombre(BuscartextBox.Text);
-            }
+                if (ConsultacomboBox.SelectedIndex == 0)
+                {
+                    ClientesdataGridView.DataSource = BLL.Clientes.GetListId(Convert.ToInt32(BuscartextBox.Text));
+                }
 
-            if (ConsultacomboBox.SelectedIndex == 2)
-            {
-                ConsultacomboBox.DataSource = BLL.Clientes.GetListDireccion(BuscartextBox.Text);
-            }
+                if (ConsultacomboBox.SelectedIndex == 1)
+                {
+                    ClientesdataGridView.DataSource = BLL.Clientes.GetListNombre(BuscartextBox.Text);
+                }
 
-            if (ConsultacomboBox.SelectedIndex == 3)
-            {
-                ConsultacomboBox.DataSource = BLL.Clientes.GetListEmail(BuscartextBox.Text);
-            }
+                if (ConsultacomboBox.SelectedIndex == 2)
+                {
+                    ClientesdataGridView.DataSource = BLL.Clientes.GetListDireccion(BuscartextBox.Text);
+                }
 
-            if (ConsultacomboBox.SelectedIndex == 4)
-            {
-                ConsultacomboBox.DataSource = BLL.Clientes.GetListTelefono(Convert.ToInt32(BuscartextBox.Text));
-            }
+                if (ConsultacomboBox.SelectedIndex == 3)
+                {
+                    ClientesdataGridView.DataSource = BLL.Clientes.GetListEmail(BuscartextBox.Text);
+                }
 
-            if (ConsultacomboBox.SelectedIndex == 5)
-            {
-                ConsultacomboBox.DataSource = BLL.Clientes.GetListCelular(Convert.ToInt32(BuscartextBox.Text));
-            }
+                if (ConsultacomboBox.SelectedIndex == 4)
+                {
+                    ClientesdataGridView.DataSource = BLL.Clientes.GetListTelefono(Convert.ToInt32(BuscartextBox.Text));
+                }
 
-            if (ConsultacomboBox.SelectedIndex == 6)
-            {
-                ConsultacomboBox.DataSource = BLL.Clientes.GetListLimiteCredito(Convert.ToInt32(BuscartextBox.Text));
+                if (ConsultacomboBox.SelectedIndex == 5)
+                {
+                    ClientesdataGridView.DataSource = BLL.Clientes.GetListCelular(Convert.ToInt32(BuscartextBox.Text));
+                }
+
+                if (ConsultacomboBox.SelectedIndex == 6)
+                {
+                    ClientesdataGridView.DataSource = BLL.Clientes.GetListLimiteCredito(Convert.ToInt32(BuscartextBox.Text));
+                }
             }
 
         }
