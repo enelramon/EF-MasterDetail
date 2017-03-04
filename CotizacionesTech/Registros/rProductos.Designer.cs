@@ -30,13 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rProductos));
-            this.CostoTextBox = new System.Windows.Forms.TextBox();
-            this.PrecioTextBox = new System.Windows.Forms.TextBox();
             this.PrecioLabel = new System.Windows.Forms.Label();
             this.CostoLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.DescripcionTextBox = new System.Windows.Forms.TextBox();
-            this.MedidaTextBox = new System.Windows.Forms.TextBox();
             this.ProductoIdTextBox = new System.Windows.Forms.TextBox();
             this.MedidasLabel = new System.Windows.Forms.Label();
             this.DescripcionLabel = new System.Windows.Forms.Label();
@@ -48,23 +45,12 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkBoxesITBS = new System.Windows.Forms.CheckBox();
+            this.maskedTextBoxMedida = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxCosto = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxPrecio = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // CostoTextBox
-            // 
-            this.CostoTextBox.Location = new System.Drawing.Point(119, 196);
-            this.CostoTextBox.Name = "CostoTextBox";
-            this.CostoTextBox.Size = new System.Drawing.Size(205, 20);
-            this.CostoTextBox.TabIndex = 53;
-            // 
-            // PrecioTextBox
-            // 
-            this.PrecioTextBox.Location = new System.Drawing.Point(119, 225);
-            this.PrecioTextBox.Name = "PrecioTextBox";
-            this.PrecioTextBox.Size = new System.Drawing.Size(205, 20);
-            this.PrecioTextBox.TabIndex = 52;
             // 
             // PrecioLabel
             // 
@@ -98,21 +84,14 @@
             this.DescripcionTextBox.Multiline = true;
             this.DescripcionTextBox.Name = "DescripcionTextBox";
             this.DescripcionTextBox.Size = new System.Drawing.Size(205, 50);
-            this.DescripcionTextBox.TabIndex = 48;
-            // 
-            // MedidaTextBox
-            // 
-            this.MedidaTextBox.Location = new System.Drawing.Point(119, 103);
-            this.MedidaTextBox.Name = "MedidaTextBox";
-            this.MedidaTextBox.Size = new System.Drawing.Size(205, 20);
-            this.MedidaTextBox.TabIndex = 47;
+            this.DescripcionTextBox.TabIndex = 0;
             // 
             // ProductoIdTextBox
             // 
             this.ProductoIdTextBox.Location = new System.Drawing.Point(119, 12);
             this.ProductoIdTextBox.Name = "ProductoIdTextBox";
             this.ProductoIdTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ProductoIdTextBox.TabIndex = 45;
+            this.ProductoIdTextBox.TabIndex = 9;
             // 
             // MedidasLabel
             // 
@@ -150,7 +129,7 @@
             this.NewButton.Margin = new System.Windows.Forms.Padding(2);
             this.NewButton.Name = "NewButton";
             this.NewButton.Size = new System.Drawing.Size(66, 51);
-            this.NewButton.TabIndex = 38;
+            this.NewButton.TabIndex = 5;
             this.NewButton.Text = "Nuevo";
             this.NewButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.NewButton.UseVisualStyleBackColor = true;
@@ -167,7 +146,7 @@
             this.SaveButton.Margin = new System.Windows.Forms.Padding(2);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(66, 52);
-            this.SaveButton.TabIndex = 39;
+            this.SaveButton.TabIndex = 6;
             this.SaveButton.Text = "Guardar";
             this.SaveButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -184,7 +163,7 @@
             this.Deletebutton.Margin = new System.Windows.Forms.Padding(2);
             this.Deletebutton.Name = "Deletebutton";
             this.Deletebutton.Size = new System.Drawing.Size(60, 52);
-            this.Deletebutton.TabIndex = 40;
+            this.Deletebutton.TabIndex = 7;
             this.Deletebutton.Text = "Eliminar";
             this.Deletebutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Deletebutton.UseVisualStyleBackColor = true;
@@ -200,7 +179,7 @@
             this.searchButton.Margin = new System.Windows.Forms.Padding(2);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(61, 29);
-            this.searchButton.TabIndex = 37;
+            this.searchButton.TabIndex = 8;
             this.searchButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
@@ -216,7 +195,7 @@
             this.groupBox1.Location = new System.Drawing.Point(57, 133);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(271, 57);
-            this.groupBox1.TabIndex = 54;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ESTADO ITBS";
             // 
@@ -227,23 +206,50 @@
             this.checkBoxesITBS.Location = new System.Drawing.Point(6, 22);
             this.checkBoxesITBS.Name = "checkBoxesITBS";
             this.checkBoxesITBS.Size = new System.Drawing.Size(39, 21);
-            this.checkBoxesITBS.TabIndex = 44;
+            this.checkBoxesITBS.TabIndex = 0;
             this.checkBoxesITBS.Text = "SI";
             this.checkBoxesITBS.UseVisualStyleBackColor = true;
+            // 
+            // maskedTextBoxMedida
+            // 
+            this.maskedTextBoxMedida.Location = new System.Drawing.Point(119, 107);
+            this.maskedTextBoxMedida.Mask = "99999";
+            this.maskedTextBoxMedida.Name = "maskedTextBoxMedida";
+            this.maskedTextBoxMedida.Size = new System.Drawing.Size(205, 20);
+            this.maskedTextBoxMedida.TabIndex = 1;
+            this.maskedTextBoxMedida.ValidatingType = typeof(int);
+            // 
+            // maskedTextBoxCosto
+            // 
+            this.maskedTextBoxCosto.Location = new System.Drawing.Point(119, 199);
+            this.maskedTextBoxCosto.Mask = "99999";
+            this.maskedTextBoxCosto.Name = "maskedTextBoxCosto";
+            this.maskedTextBoxCosto.Size = new System.Drawing.Size(205, 20);
+            this.maskedTextBoxCosto.TabIndex = 3;
+            this.maskedTextBoxCosto.ValidatingType = typeof(int);
+            // 
+            // maskedTextBoxPrecio
+            // 
+            this.maskedTextBoxPrecio.Location = new System.Drawing.Point(119, 225);
+            this.maskedTextBoxPrecio.Mask = "99999";
+            this.maskedTextBoxPrecio.Name = "maskedTextBoxPrecio";
+            this.maskedTextBoxPrecio.Size = new System.Drawing.Size(205, 20);
+            this.maskedTextBoxPrecio.TabIndex = 4;
+            this.maskedTextBoxPrecio.ValidatingType = typeof(int);
             // 
             // rProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(379, 358);
+            this.Controls.Add(this.maskedTextBoxPrecio);
+            this.Controls.Add(this.maskedTextBoxCosto);
+            this.Controls.Add(this.maskedTextBoxMedida);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.CostoTextBox);
-            this.Controls.Add(this.PrecioTextBox);
             this.Controls.Add(this.PrecioLabel);
             this.Controls.Add(this.CostoLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.DescripcionTextBox);
-            this.Controls.Add(this.MedidaTextBox);
             this.Controls.Add(this.ProductoIdTextBox);
             this.Controls.Add(this.MedidasLabel);
             this.Controls.Add(this.DescripcionLabel);
@@ -264,14 +270,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox CostoTextBox;
-        private System.Windows.Forms.TextBox PrecioTextBox;
         private System.Windows.Forms.Label PrecioLabel;
         private System.Windows.Forms.Label CostoLabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox DescripcionTextBox;
-        private System.Windows.Forms.TextBox MedidaTextBox;
         private System.Windows.Forms.TextBox ProductoIdTextBox;
         private System.Windows.Forms.Label MedidasLabel;
         private System.Windows.Forms.Label DescripcionLabel;
@@ -283,5 +285,8 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox checkBoxesITBS;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxMedida;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxCosto;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxPrecio;
     }
 }

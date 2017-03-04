@@ -21,9 +21,9 @@ namespace CotizacionesTech.Registros
         {
             ProductoIdTextBox.Clear();
             DescripcionTextBox.Clear();
-            MedidaTextBox.Clear();
-            PrecioTextBox.Clear();
-            CostoTextBox.Clear();
+            maskedTextBoxMedida.Clear();
+            maskedTextBoxPrecio.Clear();
+            maskedTextBoxCosto.Clear();
            
             checkBoxesITBS.Checked = false;
 
@@ -37,23 +37,23 @@ namespace CotizacionesTech.Registros
 
                 return false;
             }
-            if (string.IsNullOrWhiteSpace(MedidaTextBox.Text))
+            if (string.IsNullOrWhiteSpace(maskedTextBoxMedida.Text))
             {
-                errorProvider1.SetError(MedidaTextBox, "Por favor completar campos....");
+                errorProvider1.SetError(maskedTextBoxMedida, "Por favor completar campos....");
                 return false;
             }
 
           
 
-            if (string.IsNullOrWhiteSpace(CostoTextBox.Text))
+            if (string.IsNullOrWhiteSpace(maskedTextBoxCosto.Text))
             {
-                errorProvider1.SetError(CostoTextBox, "Por favor completar campos....");
+                errorProvider1.SetError(maskedTextBoxCosto, "Por favor completar campos....");
                 return false;
             }
 
-            if (string.IsNullOrWhiteSpace(PrecioTextBox.Text))
+            if (string.IsNullOrWhiteSpace(maskedTextBoxPrecio.Text))
             {
-                errorProvider1.SetError(PrecioTextBox, "Por favor completar campos....");
+                errorProvider1.SetError(maskedTextBoxPrecio, "Por favor completar campos....");
                 return false;
             }
             return true;
@@ -79,12 +79,12 @@ namespace CotizacionesTech.Registros
                    // guardar.TipoId = (Utilidades.TOINT(IDTipoTextBox.Text));
                     Guardar.ProductoId = Utilidades.TOINT(ProductoIdTextBox.Text);
                     Guardar.Descripcion = DescripcionTextBox.Text;
-                    Guardar.Medida = MedidaTextBox.Text;
+                    Guardar.Medida = maskedTextBoxMedida.Text;
 
                  
 
-                    Guardar.Precio = Convert.ToDecimal(PrecioTextBox.Text);
-                    Guardar.Costo = Convert.ToDecimal(CostoTextBox.Text);
+                    Guardar.Precio = Convert.ToDecimal(maskedTextBoxPrecio.Text);
+                    Guardar.Costo = Convert.ToDecimal(maskedTextBoxCosto.Text);
 
 
 
@@ -129,6 +129,7 @@ namespace CotizacionesTech.Registros
                 if (eliminar.Eliminar(eliminar.Buscar(p => p.ProductoId == UsuarioId)))
                 {
                     MessageBox.Show("El Producto Fue eliminado...");
+                    Limpiar();
 
                 }
                 else
@@ -164,10 +165,10 @@ namespace CotizacionesTech.Registros
                 {
                     ProductoIdTextBox.Text = Convert.ToString(producto.ProductoId);
                     DescripcionTextBox.Text = producto.Descripcion;
-                    MedidaTextBox.Text = producto.Medida;
+                    maskedTextBoxMedida.Text = producto.Medida;
                     checkBoxesITBS.Checked = producto.Itbis;
-                    PrecioTextBox.Text = Convert.ToString(producto.Precio);
-                    CostoTextBox.Text = Convert.ToString(producto.Costo);
+                    maskedTextBoxPrecio.Text = Convert.ToString(producto.Precio);
+                    maskedTextBoxCosto.Text = Convert.ToString(producto.Costo);
                     MessageBox.Show("Busqueda correcta !!!");
                 }
                 else

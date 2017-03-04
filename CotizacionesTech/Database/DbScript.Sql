@@ -19,17 +19,10 @@ Fecha Date,
 ClienteId int,
 Monto decimal
 );
-/*Tabla Cotizaciones --Luis German Rodriguez-- */
-CREATE TABLE Productos (ProductoId  INT PRIMARY KEY  IDENTITY (1, 1),
-Descripcion VARCHAR (80),
-Medida  VARCHAR (80),
-Itbis  BIT,
-Costo  FLOAT (53),
-Precio FLOAT (53)   
-);
 
 
-/* Tabla Productos -- Luis Tejada -- */
+
+/* Tabla Productos --Luis German Rodriguez-- */
 create table Productos(ProductoId int primary key identity(1,1), Descripcion varchar(60), Medida varchar(30), Itbis bit, Costo decimal, Precio decimal);
 
 
