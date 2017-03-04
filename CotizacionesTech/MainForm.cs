@@ -93,10 +93,9 @@ namespace CotizacionesTech
             db.Show();
         }
 
-        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            CotizacionesTech.Registros.rUsuarios db = new Registros.rUsuarios();
-            db.Show();
+            new Registros.rClientes().Show();
         }
     }
 }
