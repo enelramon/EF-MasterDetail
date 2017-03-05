@@ -22,62 +22,7 @@ namespace BLL
             return creado;
         }
 
-        /* public static List<Entidades.Clientes> GetListId(int id)
-         {
-             using (var repositorio = new Repositorio<Entidades.Clientes>())
-             {
-                 return (repositorio.Lista(p => p.ClienteId == id));
-             }
-         }
-
-         public static List<Entidades.Clientes>GetListNombre(string nombre)
-         {
-             using (var repositorio = new Repositorio<Entidades.Clientes>())
-             {
-                 return (repositorio.Lista(p => p.Nombres == nombre));
-             }
-         }
-
-         public static List<Entidades.Clientes> GetListDireccion(string direccion)
-         {
-             using (var repositorio = new Repositorio<Entidades.Clientes>())
-             {
-                 return (repositorio.Lista(p => p.Direccion == direccion));
-             }
-         }
-
-         public static List<Entidades.Clientes> GetListEmail(string email)
-         {
-             using (var repositorio = new Repositorio<Entidades.Clientes>())
-             {
-                 return (repositorio.Lista(p => p.Email == email));
-             }
-         }
-
-         public static List<Entidades.Clientes> GetListTelefono(int telefono)
-         {
-             using (var repositorio = new Repositorio<Entidades.Clientes>())
-             {
-                 return (repositorio.Lista(p => p.Telefono == Convert.ToString(telefono)));
-             }
-         }
-
-         public static List<Entidades.Clientes> GetListCelular(int celular)
-         {
-             using (var repositorio = new Repositorio<Entidades.Clientes>())
-             {
-                 return (repositorio.Lista(p => p.Celular == Convert.ToString(celular)));
-             }
-         }
-
-         public static List<Entidades.Clientes> GetListLimiteCredito(int limite)
-         {
-             using (var repositorio = new Repositorio<Entidades.Clientes>())
-             {
-                 return (repositorio.Lista(p => p.LimiteCredito == limite));
-             }
-         }*/
-
+        
         public static List<Entidades.Clientes> Lista(Expression<Func<Entidades.Clientes, bool>> CriterioBusqueda)
         {
             List<Entidades.Clientes> buscado = null;
