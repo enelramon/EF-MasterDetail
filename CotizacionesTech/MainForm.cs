@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using CotizacionesTech.Consultas;
 
 namespace CotizacionesTech
 {
@@ -91,6 +92,23 @@ namespace CotizacionesTech
         {
             CotizacionesTech.Registros.rProductos db = new Registros.rProductos();
             db.Show();
+        }
+
+        private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new Registros.rClientes().Show();
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CotizacionesTech.Registros.rUsuarios db = new Registros.rUsuarios();
+            db.Show();
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cClientes cliente = new cClientes();
+            cliente.Show();
         }
     }
 }
