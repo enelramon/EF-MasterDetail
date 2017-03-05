@@ -27,11 +27,7 @@ namespace CotizacionesTech.Registros
             LimiteCreditotextBox.Clear();
 
             NombreerrorProvider.Clear();
-            DireccionerrorProvider.Clear();
-            EmailerrorProvider.Clear();
-            TelefonoerrorProvider.Clear();
-            CelularerrorProvider.Clear();
-            LimiteCreditoerrorProvider.Clear();
+
 
             NombretextBox.Focus();
         }     
@@ -47,27 +43,27 @@ namespace CotizacionesTech.Registros
             }
             if (string.IsNullOrEmpty(DirecciontextBox.Text))
             {
-                DireccionerrorProvider.SetError(DirecciontextBox, "Por favor llenar el campo vacio.");
+                NombreerrorProvider.SetError(DirecciontextBox, "Por favor llenar el campo vacio.");
                 retorno = false;
             }
             if (string.IsNullOrEmpty(EmailtextBox.Text))
             {
-                EmailerrorProvider.SetError(EmailtextBox, "Por favor llenar el campo vacio.");
+                NombreerrorProvider.SetError(EmailtextBox, "Por favor llenar el campo vacio.");
                 retorno = false;
             }
             if (string.IsNullOrEmpty(TelefonomaskedTextBox.Text))
             {
-                TelefonoerrorProvider.SetError(TelefonomaskedTextBox, "Por favor llenar el campo vacio.");
+                NombreerrorProvider.SetError(TelefonomaskedTextBox, "Por favor llenar el campo vacio.");
                 retorno = false;
             }
             if (string.IsNullOrEmpty(CelularmaskedTextBox.Text))
             {
-                CelularerrorProvider.SetError(CelularmaskedTextBox, "Por favor llenar el campo vacio.");
+                NombreerrorProvider.SetError(CelularmaskedTextBox, "Por favor llenar el campo vacio.");
                 retorno = false;
             }
             if (string.IsNullOrEmpty(LimiteCreditotextBox.Text))
             {
-                LimiteCreditoerrorProvider.SetError(LimiteCreditotextBox, "Por favor llenar el campo vacio.");
+                NombreerrorProvider.SetError(LimiteCreditotextBox, "Por favor llenar el campo vacio.");
                 retorno = false;
             }
 
