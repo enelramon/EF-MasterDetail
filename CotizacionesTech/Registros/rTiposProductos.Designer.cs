@@ -37,9 +37,9 @@
             this.errorProviderNombre = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkBoxesActivo = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonNuevo = new System.Windows.Forms.Button();
+            this.buttonGuardar = new System.Windows.Forms.Button();
+            this.buttonEliminar = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderNombre)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -108,54 +108,54 @@
             this.checkBoxesActivo.UseVisualStyleBackColor = true;
             this.checkBoxesActivo.CheckedChanged += new System.EventHandler(this.esActivo_CheckedChanged);
             // 
-            // button1
+            // buttonNuevo
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(28, 171);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 51);
-            this.button1.TabIndex = 44;
-            this.button1.Text = "Nuevo";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonNuevo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNuevo.Image = ((System.Drawing.Image)(resources.GetObject("buttonNuevo.Image")));
+            this.buttonNuevo.Location = new System.Drawing.Point(28, 171);
+            this.buttonNuevo.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonNuevo.Name = "buttonNuevo";
+            this.buttonNuevo.Size = new System.Drawing.Size(66, 51);
+            this.buttonNuevo.TabIndex = 44;
+            this.buttonNuevo.Text = "Nuevo";
+            this.buttonNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonNuevo.UseVisualStyleBackColor = true;
+            this.buttonNuevo.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // buttonGuardar
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(127, 169);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(66, 52);
-            this.button2.TabIndex = 45;
-            this.button2.Text = "Guardar";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonGuardar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonGuardar.Image = ((System.Drawing.Image)(resources.GetObject("buttonGuardar.Image")));
+            this.buttonGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonGuardar.Location = new System.Drawing.Point(127, 169);
+            this.buttonGuardar.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonGuardar.Name = "buttonGuardar";
+            this.buttonGuardar.Size = new System.Drawing.Size(66, 52);
+            this.buttonGuardar.TabIndex = 45;
+            this.buttonGuardar.Text = "Guardar";
+            this.buttonGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonGuardar.UseVisualStyleBackColor = true;
+            this.buttonGuardar.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // buttonEliminar
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(214, 171);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(60, 52);
-            this.button3.TabIndex = 46;
-            this.button3.Text = "Eliminar";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonEliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEliminar.Image = ((System.Drawing.Image)(resources.GetObject("buttonEliminar.Image")));
+            this.buttonEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonEliminar.Location = new System.Drawing.Point(214, 171);
+            this.buttonEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonEliminar.Name = "buttonEliminar";
+            this.buttonEliminar.Size = new System.Drawing.Size(60, 52);
+            this.buttonEliminar.TabIndex = 46;
+            this.buttonEliminar.Text = "Eliminar";
+            this.buttonEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonEliminar.UseVisualStyleBackColor = true;
+            this.buttonEliminar.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -178,9 +178,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(314, 257);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonEliminar);
+            this.Controls.Add(this.buttonGuardar);
+            this.Controls.Add(this.buttonNuevo);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.actorIdLabel);
             this.Controls.Add(this.IDTipoTextBox);
@@ -205,9 +205,9 @@
         private System.Windows.Forms.CheckBox checkBoxesActivo;
         private System.Windows.Forms.Label actorIdLabel;
         private System.Windows.Forms.Label nombreLabel;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonNuevo;
+        private System.Windows.Forms.Button buttonGuardar;
+        private System.Windows.Forms.Button buttonEliminar;
         private System.Windows.Forms.Button button4;
     }
 }

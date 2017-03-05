@@ -63,9 +63,7 @@ namespace CotizacionesTech.Registros
 
             try
             {
-                using (var Context = new DAL.Repositorio<Entidades.TiposProductos>())
-                {
-                    if (!Validar())
+                   if (!Validar())
                     {
                         MessageBox.Show("Por favor llenar los campos");
                     }
@@ -91,8 +89,7 @@ namespace CotizacionesTech.Registros
                         //Modifica si es necesario  de lo contrario guarda 
                         if (id != guardar.TipoId)
                         {
-                            Context.Modificar(guardar);
-                            BLL.TiposProductos.Guardar(guardar);
+                            BLL.TiposProductos.Mofidicar(guardar);
                             MessageBox.Show("Tipo de articulo modificado");
                         }
                         else
@@ -100,11 +97,12 @@ namespace CotizacionesTech.Registros
                             BLL.TiposProductos.Guardar(guardar);
                             MessageBox.Show("Nuevo tipo articulo agregado con exito!");
                         }
-                    }
+                    
 
-                    Limpiar();
+                
 
                 }
+                Limpiar();
             }
             catch (Exception)
             {
@@ -116,9 +114,12 @@ namespace CotizacionesTech.Registros
         private void button3_Click(object sender, EventArgs e)
         {
             int id = int.Parse(IDTipoTextBox.Text);
-            using (var db = new DAL.Repositorio<Entidades.TiposProductos>())
-            {
-                if (db.Eliminar(db.Buscar(p => p.TipoId == id)))
+            var bll = new BLL.TiposProductos();
+          
+
+          
+            var user = BLL.TiposProductos.Buscar(p=> p.TipoId==id);
+            if (BLL.TiposProductos.Eliminar(user))
                 {
 
                     MessageBox.Show("El Tipo se ha Eliminado con exito con exito.");
@@ -128,7 +129,7 @@ namespace CotizacionesTech.Registros
                 {
                     MessageBox.Show("No se pudo eliminar el Tipo.");
                 }
-            }
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -136,9 +137,8 @@ namespace CotizacionesTech.Registros
 
             int id = int.Parse(IDTipoTextBox.Text);
             Entidades.TiposProductos tipo;
-            using (var db = new DAL.Repositorio<Entidades.TiposProductos>())
-            {
-                tipo = db.Buscar(p => p.TipoId == id);
+
+                tipo = BLL.TiposProductos.Buscar(p => p.TipoId == id);
                 if (tipo != null)
                 {
 
@@ -152,6 +152,6 @@ namespace CotizacionesTech.Registros
                     MessageBox.Show("No existe ningun Articulo con ese Id.");
                 }
             }
-        }
+        
     }
 }
