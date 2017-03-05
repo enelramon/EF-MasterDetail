@@ -23,8 +23,7 @@ namespace CotizacionesTech.Registros
             FechadateTimePicker.Value = DateTime.Today;
             ClienteIdcomboBox.Text = " ";
             MontomaskedTextBox.Clear();
-            MontoerrorProvider.Clear();
-            ClienteIderrorProvider.Clear();
+            ValidarerrorProvider.Clear();
         }
 
         private bool Validar()
@@ -33,12 +32,12 @@ namespace CotizacionesTech.Registros
 
             if (string.IsNullOrEmpty(MontomaskedTextBox.Text))
             {
-                MontoerrorProvider.SetError(MontomaskedTextBox, "Por favor llenar el campo vacio.");
+                ValidarerrorProvider.SetError(MontomaskedTextBox, "Por favor llenar el campo vacio.");
                 interruptor = false;
             }
             if (string.IsNullOrEmpty(ClienteIdcomboBox.Text))
             {
-                ClienteIderrorProvider.SetError(ClienteIdcomboBox, "Por favor llenar el campo vacio.");
+                ValidarerrorProvider.SetError(ClienteIdcomboBox, "Por favor llenar el campo vacio.");
                 interruptor = false;
             }
 

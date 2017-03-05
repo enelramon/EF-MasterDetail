@@ -37,15 +37,13 @@
             this.CotizacionIdtextBox = new System.Windows.Forms.TextBox();
             this.ClienteIdcomboBox = new System.Windows.Forms.ComboBox();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.MontoerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ValidarerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.NewButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
             this.Deletebutton = new System.Windows.Forms.Button();
             this.searchButton = new System.Windows.Forms.Button();
             this.MontomaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.ClienteIderrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.MontoerrorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClienteIderrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ValidarerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -109,9 +107,9 @@
             this.FechadateTimePicker.Size = new System.Drawing.Size(203, 20);
             this.FechadateTimePicker.TabIndex = 7;
             // 
-            // MontoerrorProvider
+            // ValidarerrorProvider
             // 
-            this.MontoerrorProvider.ContainerControl = this;
+            this.ValidarerrorProvider.ContainerControl = this;
             // 
             // NewButton
             // 
@@ -182,10 +180,6 @@
             this.MontomaskedTextBox.Size = new System.Drawing.Size(203, 20);
             this.MontomaskedTextBox.TabIndex = 22;
             // 
-            // ClienteIderrorProvider
-            // 
-            this.ClienteIderrorProvider.ContainerControl = this;
-            // 
             // rCotizaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,8 +200,7 @@
             this.Name = "rCotizaciones";
             this.Text = "rCotizaciones";
             this.Load += new System.EventHandler(this.rCotizaciones_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.MontoerrorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClienteIderrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ValidarerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,12 +215,11 @@
         private System.Windows.Forms.TextBox CotizacionIdtextBox;
         private System.Windows.Forms.ComboBox ClienteIdcomboBox;
         private System.Windows.Forms.DateTimePicker FechadateTimePicker;
-        private System.Windows.Forms.ErrorProvider MontoerrorProvider;
+        private System.Windows.Forms.ErrorProvider ValidarerrorProvider;
         private System.Windows.Forms.Button NewButton;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button Deletebutton;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.MaskedTextBox MontomaskedTextBox;
-        private System.Windows.Forms.ErrorProvider ClienteIderrorProvider;
     }
 }
