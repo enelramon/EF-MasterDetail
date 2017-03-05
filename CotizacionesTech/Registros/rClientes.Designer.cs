@@ -49,17 +49,7 @@
             this.Deletebutton = new System.Windows.Forms.Button();
             this.searchButton = new System.Windows.Forms.Button();
             this.NombreerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.DireccionerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.EmailerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.TelefonoerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.CelularerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.LimiteCreditoerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.NombreerrorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DireccionerrorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmailerrorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TelefonoerrorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CelularerrorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LimiteCreditoerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -248,26 +238,6 @@
             // 
             this.NombreerrorProvider.ContainerControl = this;
             // 
-            // DireccionerrorProvider
-            // 
-            this.DireccionerrorProvider.ContainerControl = this;
-            // 
-            // EmailerrorProvider
-            // 
-            this.EmailerrorProvider.ContainerControl = this;
-            // 
-            // TelefonoerrorProvider
-            // 
-            this.TelefonoerrorProvider.ContainerControl = this;
-            // 
-            // CelularerrorProvider
-            // 
-            this.CelularerrorProvider.ContainerControl = this;
-            // 
-            // LimiteCreditoerrorProvider
-            // 
-            this.LimiteCreditoerrorProvider.ContainerControl = this;
-            // 
             // rClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,11 +264,6 @@
             this.Name = "rClientes";
             this.Text = "rClientes";
             ((System.ComponentModel.ISupportInitialize)(this.NombreerrorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DireccionerrorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmailerrorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TelefonoerrorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CelularerrorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LimiteCreditoerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -325,10 +290,5 @@
         private System.Windows.Forms.Button Deletebutton;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.ErrorProvider NombreerrorProvider;
-        private System.Windows.Forms.ErrorProvider DireccionerrorProvider;
-        private System.Windows.Forms.ErrorProvider EmailerrorProvider;
-        private System.Windows.Forms.ErrorProvider TelefonoerrorProvider;
-        private System.Windows.Forms.ErrorProvider CelularerrorProvider;
-        private System.Windows.Forms.ErrorProvider LimiteCreditoerrorProvider;
     }
 }
