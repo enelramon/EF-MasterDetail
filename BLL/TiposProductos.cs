@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -52,12 +53,28 @@ namespace BLL
         {
             Entidades.TiposProductos Result = null;
             using (var repoitorio = new Repositorio<Entidades.TiposProductos>())
-
             {
                 Result = repoitorio.Buscar(tipo);
             }
                 
             return Result;
+        }
+
+        public static List<Entidades.TiposProductos> Lista(Expression<Func<Entidades.TiposProductos, bool>> busqueda)
+        {
+            List<Entidades.TiposProductos> Result = null;
+            using (var db = new Repositorio<Entidades.TiposProductos>())
+            {
+                try
+                {
+                    Result = db.Lista(busqueda).ToList(); //EntitySet.Where(busqueda).ToList();
+                }
+                catch
+                {
+
+                }
+                return Result;
+            }           
         }
 
     }

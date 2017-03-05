@@ -21,7 +21,7 @@ namespace CotizacionesTech
         {
             Entidades.Productos producto;
             Entidades.Clientes cliente;
-            Entidades.Cotizaciones cotizacion;
+            Entidades.Cotizaciones cotizacion;            
 
             producto = new Entidades.Productos
             {
@@ -109,6 +109,12 @@ namespace CotizacionesTech
         {
             cClientes cliente = new cClientes();
             cliente.Show();
+        }
+
+        private void tiposProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Consultas.cTiposProductos tp = new cTiposProductos();
+            tp.Show();
         }
     }
 }
