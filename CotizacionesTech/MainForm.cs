@@ -21,7 +21,7 @@ namespace CotizacionesTech
         {
             Entidades.Productos producto;
             Entidades.Clientes cliente;
-            Entidades.Cotizaciones cotizacion;            
+            Entidades.Cotizaciones cotizacion;
 
             producto = new Entidades.Productos
             {
@@ -31,16 +31,10 @@ namespace CotizacionesTech
 
             };
 
-            cliente = new Entidades.Clientes
-            {
-                ClienteId = 0,
-                Nombres = "Enel"
-
-            };
-
+            cliente = new Entidades.Clientes();
+            cliente.ClienteId = 0;
+            cliente.Nombres = "Enel";
             
-
-
             producto = BLL.Productos.Guardar(producto);
             cliente = BLL.Clientes.Guardar(cliente);
 
@@ -49,6 +43,7 @@ namespace CotizacionesTech
             cotizacion.ClienteId = cliente.ClienteId;
             cotizacion.Fecha = DateTime.Now;
             cotizacion.Monto = 100;
+
             cotizacion.AgregarDetalle(producto.ProductoId, 1, producto.Precio);
 
             cotizacion = BLL.Cotizaciones.Guardar(cotizacion);
@@ -58,12 +53,12 @@ namespace CotizacionesTech
 
         private void NewButton_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-           
+
 
         }
 

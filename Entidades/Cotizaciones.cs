@@ -15,10 +15,12 @@ namespace Entidades
         public decimal Monto { get; set; }
 
         public virtual Clientes Cliente { get; set; }
-        public virtual ICollection<CotizacionesDetalle> Detalle { get; set; }
+        public virtual ICollection<CotizacionesDetalle> Detalle { get; set; } //Muchos
+        
 
         public Cotizaciones()
         {
+
             this.Detalle = new HashSet<CotizacionesDetalle>();
         }
 

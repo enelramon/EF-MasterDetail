@@ -26,3 +26,13 @@ Monto decimal
 create table Productos(ProductoId int primary key identity(1,1), Descripcion varchar(60), Medida varchar(30), Itbis bit, Costo decimal, Precio decimal);
 
 
+
+Create Table CotizacionesDetalle (
+Id int identity(1,1) primary key,
+CotizacionId int,
+ProductoId int references Productos(ProductoId),
+Cantidad float,
+Precio float
+)
+
+
