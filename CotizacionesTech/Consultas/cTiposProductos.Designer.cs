@@ -43,7 +43,7 @@
             // TiposPruductosdataGridView
             // 
             this.TiposPruductosdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TiposPruductosdataGridView.Location = new System.Drawing.Point(12, 141);
+            this.TiposPruductosdataGridView.Location = new System.Drawing.Point(12, 90);
             this.TiposPruductosdataGridView.Name = "TiposPruductosdataGridView";
             this.TiposPruductosdataGridView.RowTemplate.Height = 24;
             this.TiposPruductosdataGridView.Size = new System.Drawing.Size(748, 326);
@@ -53,7 +53,7 @@
             // 
             this.FiltrarcomboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FiltrarcomboBox.FormattingEnabled = true;
-            this.FiltrarcomboBox.Location = new System.Drawing.Point(483, 85);
+            this.FiltrarcomboBox.Location = new System.Drawing.Point(483, 34);
             this.FiltrarcomboBox.Name = "FiltrarcomboBox";
             this.FiltrarcomboBox.Size = new System.Drawing.Size(134, 28);
             this.FiltrarcomboBox.TabIndex = 1;
@@ -61,7 +61,7 @@
             // FiltrartextBox
             // 
             this.FiltrartextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FiltrartextBox.Location = new System.Drawing.Point(89, 86);
+            this.FiltrartextBox.Location = new System.Drawing.Point(89, 35);
             this.FiltrartextBox.Name = "FiltrartextBox";
             this.FiltrartextBox.Size = new System.Drawing.Size(385, 27);
             this.FiltrartextBox.TabIndex = 2;
@@ -70,7 +70,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 93);
+            this.label1.Location = new System.Drawing.Point(25, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 20);
             this.label1.TabIndex = 4;
@@ -82,10 +82,10 @@
             this.BuscarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BuscarButton.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButton.Image")));
             this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuscarButton.Location = new System.Drawing.Point(652, 77);
+            this.BuscarButton.Location = new System.Drawing.Point(641, 20);
             this.BuscarButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BuscarButton.Name = "BuscarButton";
-            this.BuscarButton.Size = new System.Drawing.Size(92, 36);
+            this.BuscarButton.Size = new System.Drawing.Size(103, 42);
             this.BuscarButton.TabIndex = 15;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -100,7 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(772, 479);
+            this.ClientSize = new System.Drawing.Size(772, 425);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FiltrartextBox);
