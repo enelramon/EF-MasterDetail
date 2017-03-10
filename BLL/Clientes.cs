@@ -21,8 +21,7 @@ namespace BLL
 
             return creado;
         }
-
-        
+   
         public static List<Entidades.Clientes> Lista(Expression<Func<Entidades.Clientes, bool>> CriterioBusqueda)
         {
             List<Entidades.Clientes> buscado = null;
@@ -40,5 +39,23 @@ namespace BLL
             }
         }
 
+        public static List<Entidades.Clientes> ListaTodo()
+        {
+            List<Entidades.Clientes> list = null;
+
+            using (var db = new Repositorio<Entidades.Clientes>())
+            {
+                try
+                {
+                    list = db.ListaTodo();
+                }
+                catch
+                {
+
+                }
+            }
+
+            return list;
+        }
     }
 }

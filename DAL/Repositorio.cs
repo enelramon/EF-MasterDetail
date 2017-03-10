@@ -10,6 +10,7 @@ namespace  DAL
     public class Repositorio<TEntity> : IRepository<TEntity> where TEntity : class
     {
         CotizacionesDb Contex = null;
+
         public Repositorio()
         {
             Contex = new CotizacionesDb();

@@ -20,10 +20,12 @@ namespace Entidades
 
 
         public virtual ICollection<Cotizaciones> Cotizaciones { get; set; }
+        
 
         public Clientes()
         {
             this.Cotizaciones = new HashSet<Cotizaciones>();
+           
         }
     }
 }

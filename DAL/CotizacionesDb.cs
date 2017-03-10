@@ -14,7 +14,5 @@ namespace DAL
         public DbSet<Entidades.Clientes> Clientes { get; set; }
         public DbSet<Entidades.Cotizaciones> Cotizaciones { get; set; }
         public DbSet<Entidades.TiposProductos> TipoProductos { get; set; }
-
-        
     }
 }

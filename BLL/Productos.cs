@@ -1,7 +1,8 @@
-﻿using DAL; 
+﻿using DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace BLL
@@ -21,5 +22,16 @@ namespace BLL
             return creado;
         }
 
+        public static Entidades.Productos Buscar(Expression<Func<Entidades.Productos, bool>> tipo)
+        {
+            Entidades.Productos Result = null;
+
+            using (var repoitorio = new Repositorio<Entidades.Productos>())
+            {
+                Result = repoitorio.Buscar(tipo);
+            }
+
+            return Result;
+        }
     }
 }

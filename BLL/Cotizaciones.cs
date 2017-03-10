@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace BLL
@@ -19,6 +20,42 @@ namespace BLL
             }
 
             return creado;
+        }
+
+        public static bool Mofidicar(Entidades.Cotizaciones cotizacion)
+        {
+            bool eliminado = false;
+            using (var repositorio = new Repositorio<Entidades.Cotizaciones>())
+            {
+                eliminado = repositorio.Modificar(cotizacion);
+            }
+
+            return eliminado;
+
+        }
+
+        public static bool Eliminar(Entidades.Cotizaciones cotizacion)
+        {
+            bool eliminado = false;
+
+            using (var repositorio = new Repositorio<Entidades.Cotizaciones>())
+            {
+                eliminado = repositorio.Eliminar(cotizacion);
+            }
+
+            return eliminado;
+        }
+
+        public static Entidades.Cotizaciones Buscar(Expression<Func<Entidades.Cotizaciones, bool>> tipo)
+        {
+            Entidades.Cotizaciones Result = null;
+
+            using (var repoitorio = new Repositorio<Entidades.Cotizaciones>())
+            {
+                Result = repoitorio.Buscar(tipo);
+            }
+
+            return Result;
         }
     }
 }

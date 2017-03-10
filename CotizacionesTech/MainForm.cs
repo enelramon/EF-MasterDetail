@@ -44,7 +44,7 @@ namespace CotizacionesTech
             cotizacion.Fecha = DateTime.Now;
             cotizacion.Monto = 100;
 
-            cotizacion.AgregarDetalle(producto.ProductoId, 1, producto.Precio);
+            //cotizacion.AgregarDetalle(producto.ProductoId, 1, producto.Precio);
 
             cotizacion = BLL.Cotizaciones.Guardar(cotizacion);
 

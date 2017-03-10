@@ -12,18 +12,31 @@ namespace CotizacionesTech.Registros
 {
     public partial class rCotizaciones : Form
     {
+        Entidades.CotizacionesDetalle detalle /*= new Entidades.CotizacionesDetalle()*/;
+        
+
         public rCotizaciones()
         {
             InitializeComponent();
+            Limpiar();
         }
 
         private void Limpiar()
         {
+            detalle = new Entidades.CotizacionesDetalle();
+            //Producto = new Entidades.Cotizaciones();
+
             CotizacionIdtextBox.Clear();
             FechadateTimePicker.Value = DateTime.Today;
             ClienteIdcomboBox.Text = " ";
             MontomaskedTextBox.Clear();
             ValidarerrorProvider.Clear();
+            DetalledataGridView.DataSource = null;
+            ProductoIdtextBox.Clear();
+            PrecioProductotextBox.Clear();
+            NombreProductotextBox.Clear();
+            ImportetextBox.Clear();
+            CantidadnumericUpDown.Value = 0;
         }
 
         private bool Validar()
@@ -46,16 +59,22 @@ namespace CotizacionesTech.Registros
 
         private void LlenarCombo()
         {
-            var llenar = new DAL.CotizacionesDb();
-            using(var Context = new DAL.Repositorio<Entidades.Clientes>())
-            {
-                List<Entidades.Clientes> lista = Context.ListaTodo();
+            List<Entidades.Clientes> lista = BLL.Clientes.ListaTodo();
 
-                ClienteIdcomboBox.DataSource = lista;
-                ClienteIdcomboBox.DisplayMember = "Nombres";
-                ClienteIdcomboBox.ValueMember = "ClienteId";
-            }
-            
+            ClienteIdcomboBox.DataSource = lista;
+            ClienteIdcomboBox.DisplayMember = "Nombres";
+            ClienteIdcomboBox.ValueMember = "ClienteId";
+        }
+
+        private void LlenarGrid(Entidades.Cotizaciones producto)
+        {
+            //DetalledataGridView.DataSource = null;
+            DetalledataGridView.DataSource = producto.Detalle.ToList();
+
+            this.DetalledataGridView.Columns["Id"].Visible = false;
+            this.DetalledataGridView.Columns["CotizacionId"].Visible = false;
+            this.DetalledataGridView.Columns["Producto"].Visible = false;
+            this.DetalledataGridView.Columns["Cotizaciones"].Visible = false;
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -63,16 +82,15 @@ namespace CotizacionesTech.Registros
             var cotizacion = new Entidades.Cotizaciones();
             int id = Utilidades.TOINT(CotizacionIdtextBox.Text);
 
-            using (var Context = new DAL.Repositorio<Entidades.Cotizaciones>())
-            {
-                cotizacion = Context.Buscar(p => p.CotizacionId == id);
-            }
+            cotizacion = BLL.Cotizaciones.Buscar(p => p.CotizacionId == id);
 
             if (cotizacion != null)
             {
                 FechadateTimePicker.Value = cotizacion.Fecha;
                 MontomaskedTextBox.Text = cotizacion.Monto.ToString();
                 ClienteIdcomboBox.Text = cotizacion.ClienteId.ToString();
+
+                LlenarGrid(cotizacion);
             }
             else
             {
@@ -90,30 +108,29 @@ namespace CotizacionesTech.Registros
         {
             var cotizacion = new Entidades.Cotizaciones();
             int id = 0;
+            string cliente = ProductoIdtextBox.Text;
 
-            using (var Context = new DAL.Repositorio<Entidades.Cotizaciones>())
+            if (!Validar())
             {
-                if (!Validar())
+                MessageBox.Show("Por favor llenar los campos vacios.");
+            }
+            else
+            {
+                //cotizacion.CotizacionId = Utilidades.TOINT(CotizacionIdtextBox.Text);
+                cotizacion.Fecha = FechadateTimePicker.Value;
+                cotizacion.ClienteId = Utilidades.TOINT(ClienteIdcomboBox.Text);
+                cotizacion.Monto = Convert.ToDecimal(MontomaskedTextBox.Text);
+                detalle.Producto.ProductoId = Utilidades.TOINT(cliente);
+
+                if (id != cotizacion.CotizacionId)
                 {
-                    MessageBox.Show("Por favor llenar los campos vacios.");
+                    BLL.Cotizaciones.Mofidicar(cotizacion);
+                    MessageBox.Show("La cotizacion de modifico con exito.");
                 }
                 else
                 {
-                    cotizacion.CotizacionId = Utilidades.TOINT(CotizacionIdtextBox.Text);
-                    cotizacion.Fecha = FechadateTimePicker.Value;
-                    cotizacion.ClienteId = Utilidades.TOINT(ClienteIdcomboBox.Text);
-                    cotizacion.Monto = Convert.ToDecimal(MontomaskedTextBox.Text);
-
-                    if (id != cotizacion.CotizacionId)
-                    {
-                        Context.Modificar(cotizacion);
-                        MessageBox.Show("La cotizacion de modifico con exito.");
-                    }
-                    else
-                    {
-                        Context.Guardar(cotizacion);
-                        MessageBox.Show("La cotizacion se guardo con exito.");
-                    }
+                    BLL.Cotizaciones.Guardar(cotizacion);
+                    MessageBox.Show("La cotizacion se guardo con exito.");
                 }
 
                 Limpiar();
@@ -130,31 +147,38 @@ namespace CotizacionesTech.Registros
             {
                 int id = Utilidades.TOINT(CotizacionIdtextBox.Text);
 
-                using (var Context = new DAL.Repositorio<Entidades.Cotizaciones>())
+                if (BLL.Cotizaciones.Eliminar(BLL.Cotizaciones.Buscar(p => p.CotizacionId == id)))
                 {
-                    if (Context.Eliminar(Context.Buscar(p => p.CotizacionId == id)))
-                    {
-                        Limpiar();
-                        MessageBox.Show("La cotizacion se elimino con exito.");
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se pudo eliminar la cotizacion.");
-                    }
+                    Limpiar();
+                    MessageBox.Show("La cotizacion se elimino con exito.");
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo eliminar la cotizacion.");
                 }
             }
         }
 
         private void rCotizaciones_Load(object sender, EventArgs e)
         {
-
+            LlenarCombo();
         }
 
         private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter )
-            {
 
+            int id = Utilidades.TOINT(ProductoIdtextBox.Text);
+
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                detalle.Producto = BLL.Productos.Buscar(p => p.ProductoId == id);
+
+                if (detalle.Producto != null)
+                {
+                    NombreProductotextBox.Text = detalle.Producto.Descripcion;
+                    PrecioProductotextBox.Text = detalle.Producto.Precio.ToString();
+                    CantidadnumericUpDown.Focus();
+                }
             }
         }
 
@@ -165,15 +189,25 @@ namespace CotizacionesTech.Registros
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            if (numericUpDown1.Value> 0 )
+            if (CantidadnumericUpDown.Value > 0)
             {
-
+                decimal importe = detalle.Producto.Precio * CantidadnumericUpDown.Value;
+                ImportetextBox.Text = importe.ToString();
             }
+            else
+            {
+                ImportetextBox.Text = "0";
+            }
+
+            Agregarbutton.Focus();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Entidades.Cotizaciones Producto = new Entidades.Cotizaciones();
+            Producto.AgregarDetalle(detalle.Producto, CantidadnumericUpDown.Value);
 
+            LlenarGrid(Producto);
         }
     }
 }

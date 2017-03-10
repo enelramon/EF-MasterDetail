@@ -61,7 +61,6 @@ namespace CotizacionesTech.Registros
 
         }
 
-
         private void SaveButton_Click(object sender, EventArgs e)
         {
 
@@ -80,9 +79,6 @@ namespace CotizacionesTech.Registros
                     Guardar.ProductoId = Utilidades.TOINT(ProductoIdTextBox.Text);
                     Guardar.Descripcion = DescripcionTextBox.Text;
                     Guardar.Medida = maskedTextBoxMedida.Text;
-
-                 
-
                     Guardar.Precio = Convert.ToDecimal(maskedTextBoxPrecio.Text);
                     Guardar.Costo = Convert.ToDecimal(maskedTextBoxCosto.Text);
 

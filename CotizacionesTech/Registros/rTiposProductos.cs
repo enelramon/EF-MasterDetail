@@ -115,9 +115,7 @@ namespace CotizacionesTech.Registros
         {
             int id = int.Parse(IDTipoTextBox.Text);
             var bll = new BLL.TiposProductos();
-          
-
-          
+             
             var user = BLL.TiposProductos.Buscar(p=> p.TipoId==id);
             if (BLL.TiposProductos.Eliminar(user))
                 {
@@ -151,7 +149,6 @@ namespace CotizacionesTech.Registros
                 {
                     MessageBox.Show("No existe ningun Articulo con ese Id.");
                 }
-            }
-        
+            }    
     }
 }
