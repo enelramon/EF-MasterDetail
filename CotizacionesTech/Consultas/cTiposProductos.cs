@@ -49,12 +49,14 @@ namespace CotizacionesTech.Consultas
             {
                 if (FiltrarcomboBox.SelectedIndex == 0)
                 {
-                    TiposPruductosdataGridView.DataSource = BLL.TiposProductos.Lista(tp=> tp.TipoId == Convert.ToInt32(FiltrartextBox.Text));
+                    int num;
+                    int.TryParse(FiltrartextBox.Text, out num);
+                    TiposPruductosdataGridView.DataSource = BLL.TiposProductos.Lista(tp=> tp.TipoId == num);
                 }
-
+                else
                 if (FiltrarcomboBox.SelectedIndex == 1)
                 {
-                    TiposPruductosdataGridView.DataSource = BLL.TiposProductos.Lista(tp=> tp.Tipo == FiltrartextBox.Text);
+                    TiposPruductosdataGridView.DataSource = BLL.TiposProductos.Lista(tp=> tp.Tipo.Equals(FiltrarcomboBox.Text));
                 }               
             }
 
