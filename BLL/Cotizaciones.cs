@@ -50,9 +50,12 @@ namespace BLL
         {
             Entidades.Cotizaciones Result = null;
 
-            using (var repoitorio = new Repositorio<Entidades.Cotizaciones>())
+            using (var repositorio = new Repositorio<Entidades.Cotizaciones>())
             {
-                Result = repoitorio.Buscar(tipo);
+                Result = repositorio.Buscar(tipo);
+
+                if (Result != null)
+                    Result.Detalle.Count();//para oblibar el lazyloading a cargar los datos
             }
 
             return Result;

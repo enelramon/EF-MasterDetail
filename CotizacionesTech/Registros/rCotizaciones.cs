@@ -13,7 +13,7 @@ namespace CotizacionesTech.Registros
     public partial class rCotizaciones : Form
     {
         Entidades.CotizacionesDetalle detalle /*= new Entidades.CotizacionesDetalle()*/;
-        
+        Entidades.Cotizaciones Cotizacion = new Entidades.Cotizaciones();
 
         public rCotizaciones()
         {
@@ -25,6 +25,7 @@ namespace CotizacionesTech.Registros
         {
             detalle = new Entidades.CotizacionesDetalle();
             //Producto = new Entidades.Cotizaciones();
+            Cotizacion = new Entidades.Cotizaciones();
 
             CotizacionIdtextBox.Clear();
             FechadateTimePicker.Value = DateTime.Today;
@@ -106,7 +107,7 @@ namespace CotizacionesTech.Registros
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            var cotizacion = new Entidades.Cotizaciones();
+          
             int id = 0;
             string cliente = ProductoIdtextBox.Text;
 
@@ -117,19 +118,19 @@ namespace CotizacionesTech.Registros
             else
             {
                 //cotizacion.CotizacionId = Utilidades.TOINT(CotizacionIdtextBox.Text);
-                cotizacion.Fecha = FechadateTimePicker.Value;
-                cotizacion.ClienteId = Utilidades.TOINT(ClienteIdcomboBox.Text);
-                cotizacion.Monto = Convert.ToDecimal(MontomaskedTextBox.Text);
-                detalle.Producto.ProductoId = Utilidades.TOINT(cliente);
+                Cotizacion.Fecha = FechadateTimePicker.Value;
+                Cotizacion.ClienteId =  (int)ClienteIdcomboBox.SelectedValue;
+                Cotizacion.Monto = Convert.ToDecimal(MontomaskedTextBox.Text);
+                
 
-                if (id != cotizacion.CotizacionId)
+                if (id != Cotizacion.CotizacionId)
                 {
-                    BLL.Cotizaciones.Mofidicar(cotizacion);
+                    BLL.Cotizaciones.Mofidicar(Cotizacion);
                     MessageBox.Show("La cotizacion de modifico con exito.");
                 }
                 else
                 {
-                    BLL.Cotizaciones.Guardar(cotizacion);
+                    BLL.Cotizaciones.Guardar(Cotizacion);
                     MessageBox.Show("La cotizacion se guardo con exito.");
                 }
 
@@ -204,10 +205,10 @@ namespace CotizacionesTech.Registros
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Entidades.Cotizaciones Producto = new Entidades.Cotizaciones();
-            Producto.AgregarDetalle(detalle.Producto, CantidadnumericUpDown.Value);
+            
+            Cotizacion.AgregarDetalle(detalle.Producto, CantidadnumericUpDown.Value);
 
-            LlenarGrid(Producto);
+            LlenarGrid(Cotizacion);
         }
     }
 }

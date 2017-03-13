@@ -28,13 +28,12 @@ namespace CotizacionesTech
                 ProductoId = 0,
                 Descripcion = "Cebolla",
                 Precio = 100
-
             };
 
             cliente = new Entidades.Clientes();
             cliente.ClienteId = 0;
             cliente.Nombres = "Enel";
-            
+
             producto = BLL.Productos.Guardar(producto);
             cliente = BLL.Clientes.Guardar(cliente);
 
@@ -44,7 +43,7 @@ namespace CotizacionesTech
             cotizacion.Fecha = DateTime.Now;
             cotizacion.Monto = 100;
 
-            //cotizacion.AgregarDetalle(producto.ProductoId, 1, producto.Precio);
+            cotizacion.AgregarDetalle(producto, 1);
 
             cotizacion = BLL.Cotizaciones.Guardar(cotizacion);
 
